@@ -20,3 +20,19 @@ if(ans=="yes"):
         print("No such roll numbers found")
 
         
+# wap to input a roll number and delete it from the dictionary....
+print("Want to delete any roll numbers from the list")
+ans1=input("enter yes/no").lower()
+if(ans1=="yes"):
+    roll=int(input("enter the roll number to be deleted"))
+    if(roll in d.keys()):
+        del d[roll]
+        print(roll,"has been successfully deleted from the dictionary")
+        print("The updated dictionary is as follows")
+        print(d)
+    else:
+        print("No such roll number found in the existing roll numbers")
+
+
+
+
