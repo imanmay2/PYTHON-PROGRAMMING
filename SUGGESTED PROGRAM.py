@@ -153,6 +153,17 @@ for i in range(3,n+1):
     a=b
     b=c
 
+# COMPUTE THE H.C.F AND L.C.M OF MINIMUM TWO INTEGER NUMBERS.
+x=int(input("enter the first number"))
+y=int(input("enter the second number"))
+hcf=0
+lcm=0
+for i in range(1,x+1):
+    if(x%i==0 and y%i==0):
+        hcf=i
+lcm=(x*y)/hcf
+print("........THE H.C.F AND L.C.M IS........",hcf,lcm)
+
 
 #COUNT THE DISPLAY THE THE NUMBER OF VOWELS, CONONANTS,UPPERCASE,LOWERCASE CHARACTERS IN A STRING.
 
@@ -205,3 +216,15 @@ if(n in li):
 else:
     print(".........NOT FOUND IN THE LIST/TUPLE........")
 
+
+# CREATE A DICTIONARY WITH ROLL NUMBER, NAME AND MARKS OF N STUDENTS AND DISPLAY THE NAME WHOSE HAS SECURED MORE THAN 75 MARKS.
+n=int(input("enter the number of students"))
+d={}
+for i in range(n):
+    r=int(input("Enter the roll number of the student"))
+    n=input("enter the name of the student")
+    m=float(input("enter the marks of the student"))
+    d[r]=[n,m]
+for i in d:
+    if(d[i][1]>75):
+        print(d[i][0])
