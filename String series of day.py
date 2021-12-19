@@ -6,12 +6,17 @@ a=0
 b=1
 for i in range(n):
     a=a+r
+    r=r+1
     if(a>6):
         a=a-(7*b)
+        print(li[a],end=' ')
+        a=a+(7*b)
         b=b+1
+    elif(a<=6):
+        print(li[a],end=' ')
         
-    r=r+1
-    print(li[a],end=' ')
+   
+    
 
     
 
