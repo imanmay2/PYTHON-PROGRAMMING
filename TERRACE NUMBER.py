@@ -43,6 +43,8 @@ while(i<=m):
             if(n1+1==n2 or n2+1==n1):
                 pro=1
                 break
+        else:
+            i=i+1
 if(flag==1 and pro==1):
     print("Terrace Number")
 else:
