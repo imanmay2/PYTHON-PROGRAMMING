@@ -7,7 +7,7 @@ pro=0
 while(i<=m):
     if(n2%i==0 and n1%i==0):
         li_x=list(str(n1//i))
-        li_y=list(str(n2//i))
+        li_y=list(str(n2//i)) 
         li_x.sort()
         li_y.sort()
         if(li_x == li_y):
