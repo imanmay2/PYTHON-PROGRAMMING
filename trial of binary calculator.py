@@ -6,3 +6,4 @@ while(deci!=0):
     str1=str1+str(r)
     deci=deci//2
 print(str1)
+
