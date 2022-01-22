@@ -11,7 +11,6 @@ print("7.  DECIMAL TO HEXADECIMAL")
 print("8.  HEXADECIMAL TO DECIMAL")
 
 #USING FUNCTION OF REVERSING OF A NUMBER.
-
 def rev(n):
     reverse=0
     while(n!=0):
@@ -115,9 +114,8 @@ if(ch>=1 and ch<9):
                 str4=str4+li_4[li_3.index(r)]
             else:
                 str4=str4+str(r)
-        deci=deci//16
-        n=int(str4)
-        print("HEXADECIMAL CONVERSION IS",rev(n))
+            deci=deci//16
+        print("HEXADECIMAL CONVERSION IS",str4[::-1])
         
         
         
