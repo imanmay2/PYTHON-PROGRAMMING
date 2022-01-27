@@ -45,7 +45,7 @@ if(flag==1 and pro==1):
     print("Terrace Number")
 else:
     print("Not a Terrace number")
-    print(flag,pro)
+    
         
         
     
