@@ -6,7 +6,8 @@ for i in range(n):
     li.append(num)
 for j in range(n):
     sq=li[j]**0.5
-    if(type(sq)=="class 'float'"):
+    num=int(li[j]**0.5)
+    if(sq%num==0):
         print(li[j])
 
         

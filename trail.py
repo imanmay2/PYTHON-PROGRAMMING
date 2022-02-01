@@ -1,3 +1,3 @@
-a=12.34
-r=a%10
-print(r)
+bi=101011001
+
+print("hexadecimal is",(bi))
