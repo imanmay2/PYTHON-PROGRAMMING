@@ -1,5 +1,5 @@
 <!-- ![Logo](image/py.jpg) -->
-<kbd>![image](image/py.jpg)</kbd>
+<kbd>![image](image/py.JPG)</kbd>
 
     
 # PYTHON PROGRAMMING
