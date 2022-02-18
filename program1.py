@@ -10,3 +10,5 @@ names=[li[0][0],li[1][0],li[2][0],li[3][0],li[4][0]]
 names.sort()
 print(names)
 
+for i in :
+    
