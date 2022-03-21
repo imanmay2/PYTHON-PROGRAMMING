@@ -1,10 +1,10 @@
-str1=input("enter the sentence you want").upper()
+str1=input("enter the string").upper()
 li=str1.split()
 ct=0
-for i in range(0,len(li)-1):
-    for j in range(0,len(li[i])-1):
-        g=li[i][j]+li[i][j+1]
-        for k in range(i+1,len(li)):
-            if(g in li[k]):
-                ct+=1
-print("number of such words present in the sentence is as follows",ct)
+for i in range(len(li)):
+    for j in range(len(li[i])-1):
+        if (chr(ord(li[i][j])+1)) == li[i][j+1]:
+            ct=ct+1
+            print(li[i], end=" ")
+            break
+print("no. of such words are as follows",ct)

@@ -1,6 +1,6 @@
-li=[5,3,2,1]
-for i in range(0,len(li)-1):
-    for j in range(0,len(li)):
-        if(li[j]>li[j+1]):
-            li[j],li[j+1]=li[j+1],li[j]
-print(li)
+userInp = input("Enter sentence: ").strip().upper().split(" ")
+for i in range(len(userInp)):
+    for j in range(len(userInp[i])-1):
+        if chr(ord(userInp[i][j])+1) == userInp[i][j+1]:
+            print(userInp[i], end=" ")
+            break
