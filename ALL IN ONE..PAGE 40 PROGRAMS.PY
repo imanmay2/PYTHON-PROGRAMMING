@@ -71,4 +71,9 @@ elif(n<0):
 print("THE SUM IS AS FOLLOWS",s1)
 
         
+#8. WAP ACCEPT A DATE IN A FORMAT LIKE..MMDDYYYY....AND DISPLAY IN MONTH NAME IN FRONT IN WORDS....
+#SAMPLE.....INPUT....12252019........DESIRED OUTPUT IS......DECEMBER 25, 2019
+date=str(int(input("Enter the date in MMDDYYYY")))
+m=['JANUARY','FEBRUARY','MARCH','APRIL','MAY','JUNE','JULY','AUGUST','SEPTEMBER','OCTOBER','NOVEMBER','DECEMBER']
+print(m[int(date[0:2])-1], date[2:4], date[4:8])
     
