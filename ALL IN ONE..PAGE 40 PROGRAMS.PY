@@ -79,5 +79,5 @@ print(m[int(date[0:2])-1], date[2:4], date[4:8])
 
 
 #9. WAP CREATE A TABLE CONVERTING MILES INTO KILOMETER.
-
+print("MILES TO KILOMETERS IS",float(input("Enter the length in miles"))*1.609)
     
