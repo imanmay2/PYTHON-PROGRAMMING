@@ -76,4 +76,8 @@ print("THE SUM IS AS FOLLOWS",s1)
 date=str(int(input("Enter the date in MMDDYYYY")))
 m=['JANUARY','FEBRUARY','MARCH','APRIL','MAY','JUNE','JULY','AUGUST','SEPTEMBER','OCTOBER','NOVEMBER','DECEMBER']
 print(m[int(date[0:2])-1], date[2:4], date[4:8])
+
+
+#9. WAP CREATE A TABLE CONVERTING MILES INTO KILOMETER.
+
     
