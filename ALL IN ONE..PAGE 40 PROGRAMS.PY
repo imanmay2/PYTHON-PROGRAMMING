@@ -8,3 +8,11 @@ def check(x):
         print(x,"is a nuetral number")
 n=int(input("Enter any number: "))
 check(n)
+
+#2.WAP that returns True if the input number is an even number , False otherwise.
+n=int(input("Enter any number: "))
+if(n%2==0):
+    print("TRUE")
+else:
+    print("FALSE")
+    
