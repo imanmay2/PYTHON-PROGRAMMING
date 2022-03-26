@@ -46,5 +46,14 @@ else:
 
 
 # 6.1 FOOT = 12 INCHES. WRITE THE FUNCTIONS TO CONVERT FOOT TO INCHES AND VICE-VERSA..
-
+def F_I(f):
+    i1=12*f
+    return i1
+def I_F(i):
+    f1=i/12
+    return f1
+f=int(input("Enter the length in foot respectively:    "))
+print("Foot entered is",f,"respective inches is",F_I(f))
+i=int(input("Enter the length in inches respectively:    "))
+print("Inches entered is",i,"respective foot is",I_F(i))
     
