@@ -56,4 +56,19 @@ f=int(input("Enter the length in foot respectively:    "))
 print("Foot entered is",f,"respective inches is",F_I(f))
 i=int(input("Enter the length in inches respectively:    "))
 print("Inches entered is",i,"respective foot is",I_F(i))
+
+
+#7. WAP ACCEPT AN INTEGER 'N' AND DISPLAY THE SUM FROM N TO (2*N),IF IT'S NON-NEGATIVE....AND IF IT'S NEGATIVE THEN DISPLAY THE SUM FROM 
+# (2*N) TO N
+n=int(input("Enter the number"))#N
+s1=0
+if(n>0):
+    for i in range(n,(2*n)+1):
+        s1+=i
+elif(n<0):
+    for j in range(n,(2*n)-1,-1):
+        s1+=j
+print("THE SUM IS AS FOLLOWS",s1)
+
+        
     
