@@ -44,4 +44,7 @@ else:
         day=day-7
     print("DAY NUMBER OF",n,"IS",li[day])
 
+
+# 6.1 FOOT = 12 INCHES. WRITE THE FUNCTIONS TO CONVERT FOOT TO INCHES AND VICE-VERSA..
+
     
