@@ -87,3 +87,13 @@ print("POUNDS TO KILOGRAM  IS",float(input("Enter the amount in pounds"))*0.454)
 
 
 #11.WAP THAT WILL ACCEPT 2 DIIFERENT TIMES IN MILITARY FORMAT(0900,1730) AND DISPLAY THE DIFFERENCE IN THEIR TIMES IN HRS AND MINUTES..
+t1=input("Enter the time 1 in military format:  ")
+t2=input("Enter the time 2 in military format:  ")
+min=(int(t2[2:-1])-int(t1[2:-1]))*10
+if(min<0):
+    min=min*(-1)
+hrs=int(t2[0:2])-int(t1[0:2])
+if(hrs<0):
+    hrs=hrs*(-1)
+print(hrs,"hrs and",min,"mins")
+
