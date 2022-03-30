@@ -65,3 +65,30 @@ for i in range(3,10):
     a=b 
     b=c 
 print("TUPLE CONTAINING FIRST 9 TERMS OF THE FIBBONACCI SERIES : ",t)  
+
+
+#9. CREATE A DICTIONARY CONTAINING MONTH NAMES AS KEYS AND NUMBER OF DAYS AS THEIR VALUES.
+#creatting a dictionary..
+D={}
+for i in range(12):
+    m=input("ENTER THE MONTH NAME").upper()
+    d=int(input("ENTER THE DAYS PRESENT IN THAT MONTH"))
+    D[m]=d
+print("CREATED DICTIONARY IS AS FOLLOWS",D) 
+
+# input a month name and display how many days are present in that month
+m_name=input("ENTER THE MONTH NAME").upper()
+if(m_name in D.keys()):
+    print("MONTH CONTAINING THE DAY NUMBER IS AS FOLLOWS",D[m_name])
+
+# print all the keys in alphabetical order.
+print(D.keys())
+
+# print all the months having 31 days.
+for i in D:
+    if(D[i]==31):
+        print(i)
+
+
+#11. WAP THAT WILL SORT THE KEYS USING BUBBLE SORT AND PRINT THE KEYS IN THE FORM OF LIST.
+
