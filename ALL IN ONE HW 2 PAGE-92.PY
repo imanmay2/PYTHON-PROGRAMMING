@@ -46,3 +46,13 @@ for i in range(1,100):
     if(i%3==0 or i%5==0):
         li.append(i)
 print("THE LIST IS AS FOLLOWS", li)
+
+
+#7. WAP THAT INPUTS TWO STRINGS AND DISPLAY THE STRINGS AFTER SWAPPING...
+str1=input("ENTER THE STRING 1: ")
+str2=input("ENTER THE STRING 2: ")
+print("STRINGS INPUTED IS ",str1,str2)
+(str1,str2)=(str2,str1)
+print("STRINGS AFTER SWAPPING ",str1,str2)
+
+#8. WAP THAT WILL CREATE A TUPLE THAT CONTAINS FIRST 9 TERMS OF THE FIBBONACCI SERIES.
