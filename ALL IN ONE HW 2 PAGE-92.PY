@@ -23,3 +23,20 @@ else:
 
 
 # 4. WAP THAT ROTATES THE ELEMENTS IN A LIST.THAT IS FIRST ELEMENT GOES TO THE SECOND, SECOND GOES TO THE THIRD .....AND LAST ELEMENT GOES TO THE FIRST.
+li=eval(input("ENTER THE LIST  YOU WANT: "))
+li.insert(0,li.pop(len(li)-1))
+print(li)
+
+
+#5. WAP TO PRINT THE LONGEST WORDS FROM THE LIST OF WORDS.
+str1=input("ENTER THE SENTENCE: ")
+li1=[]
+li=str1.split()
+for i in li:
+    ct=0
+    for j in i:
+        ct=ct+1
+    li1.append(ct)
+print("MAXIMUM WORD PRESENT IN THE LIST OF THE WORDS IS AS FOLLOWS",li[li1.index(max(li1))])
+
+
