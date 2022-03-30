@@ -41,4 +41,8 @@ print("MAXIMUM WORD PRESENT IN THE LIST OF THE WORDS IS AS FOLLOWS",li[li1.index
 
 
 #6 .WAP THAT WILL CREATE A LIST OF NUMBERS CONTAINING NUMBER FROM 1 TO 99 WHICH ARE THE MULTIPLES OF 3 OR 5.
-
+li=[]
+for i in range(1,100):
+    if(i%3==0 or i%5==0):
+        li.append(i)
+print("THE LIST IS AS FOLLOWS", li)
