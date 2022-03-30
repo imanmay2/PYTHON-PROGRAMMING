@@ -56,3 +56,12 @@ print("STRINGS INPUTED IS ",str1,str2)
 print("STRINGS AFTER SWAPPING ",str1,str2)
 
 #8. WAP THAT WILL CREATE A TUPLE THAT CONTAINS FIRST 9 TERMS OF THE FIBBONACCI SERIES.
+a=0
+b=1
+t=(a,b)
+for i in range(3,10):
+    c=a+b
+    t=t+(c,)
+    a=b 
+    b=c 
+print("TUPLE CONTAINING FIRST 9 TERMS OF THE FIBBONACCI SERIES : ",t)  
