@@ -68,3 +68,40 @@ def root(x,n):
 x=int(input("ENTER THE NUMBER: "))
 n=int(input("ENTER THE NUMBER TO BE ROOTED OVER THE PREVIOUS NUMBER: "))
 print("FAVOURABLE RESULT IS AS FOLLOWS: ",root(x,n))
+
+#7.WAP THAT WILL ACCEPT A NUMBER AND DISPLAY THE RANDOM NUMBER OF THAT VERY DIGIT USING A FUNCTION.
+# E.G....USER HAS INPUTTED 2.....SO IT SHOUKD PRINT THE RESULT OF ANY 2 DIGIT RANDOM NUMBER SUCH AS 88.
+import random
+def gen(d):
+    num=random.randint(s,e)
+    return num
+d=int(input("ENTER THE NUMBER YOU WANT: "))
+s=int('9'*(d-1))+1
+e=int('9'*d)
+print("RANDOM",d,"DIGIT NUMBER IS AS FOLLOWS: ",gen(d))
+
+#8. WAP THAT CREATES A FUNCTION WHICH WILL TAKE 2 NUMBERS AND SIMULTANEOUSLY RETURNS THE NUMBER THAT HAS MINIMUM ONE'S DIGIT NUMBER.
+def check(n1,n2):
+    f=n1%10
+    l=n2%10
+    if(f>l):
+        return n2
+    elif(f<l):
+        return n1
+    else:
+        print("WRONG INPUT !!!! PLEASE TRY AGAIN")
+
+n1=int(input("ENTER THE NUNBER YOU WANT"))
+n2=int(input("ENTER THE NUNBER YOU WANT"))
+print("NUMBER MINIMUM TO THAT OF IT'S ONE DIGIT IS AS FOLLOWS: ",check(n1,n2))
+
+
+#9. WAP THAT WILL CREATE A FUNCTION THAT WILL GENERATE A SERIESWHICH TAKES FIRST AND LAST VALUES OF THAT SERIES.
+def series(f,l):
+    for i in range(f,l+1):
+        if(i%2!=0):
+            print(i,end=' ')
+f=int(input("ENTER THE FIRST VALUE: "))
+l=int(input("ENTER THE LAST VALUE:  "))
+print("SERIES IS AS FOLLOWS: ")
+series(f,l)     
