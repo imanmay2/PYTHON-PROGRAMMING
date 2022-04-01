@@ -6,6 +6,18 @@ if(str1[3]=='-' and str1[7]=='-' and len(str1[0:3])==3 and len(str1[4:7])==3 and
 else:
     print("NOT A VALID INPUT!!!!")
 
+#2. WAP  that will accept a sentence followed by enter and print the original sentences, number of words, characters and percentage of 
+# alphanumeroce charcacters.
+str1=input("ENTER THE SENTENCE: ")
+print("ORIGINAL SENTENCE IS AS FOLLOWS: ",str1) 
+print("COUNT OF THE NUMBER OF WORDS IS: ",len(str1.split()))
+print("NO. OF CHARACTERS PRESENT: ",len(str1))
+ct=0
+for i in str1:
+    if(i.isalnum()):
+        ct+=1
+print("PERCENTAGE OF THAT CHARACTERS WHICH ARE ALPHANUMERIC IS AS FOLLOWS: ",(ct/len(str1))*100)
+
 
 #3. WAP accept two lists and display the sum of their individual index's elements.
 # For e.g L=[3,1,4] and M=[1,5,9] ......RESULTS SHOULD BE R=[4,6,13]
