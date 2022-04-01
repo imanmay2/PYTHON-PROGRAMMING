@@ -32,3 +32,12 @@ if(str1=="YES"):
 else:
     no()
 # CREATE A FUNCTION THAT WILL TAKE TWO STRINGS AND PRINT TRUE IF BOTH THE STRINGS ARE SAME ELSE PRINT FALSE.
+def check(s1,s2):
+    if(s1==s2):
+        return True
+    else:
+        return False
+s1=input("ENTER THE STRING: ")
+s2=input("ENTER THE STRING: ")
+print("RESULT IS AS FOLLOWS: ",check(s1,s2))
+
