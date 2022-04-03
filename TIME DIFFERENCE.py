@@ -24,5 +24,3 @@ elif((t1<1200 and t2<1200) or (t1>=1200 and t2>=1200)):
     if(diff%100==60):
         diff=int(str((diff//100)+1)+str('00'))
     print('THE DIFFERECE BETWEEN THE TIMINGS IS AS FOLLOWS: ',diff//100,"HOURS",diff%100,"MINUTES")
-
-
