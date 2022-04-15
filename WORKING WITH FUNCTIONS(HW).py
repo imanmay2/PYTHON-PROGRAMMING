@@ -1,3 +1,22 @@
+# 22. CREATE A FUNCTION MANIP WHICH WILL HAVE TWO ARGUMENTS AS STRING, INT.PRINT THE EVEN POSITION OF THAT STRING IF VALUE OF INT IS EVEN 
+# OTHER WISE DISPLAY THE ODD POSITIONS.
+def MANIP(str1,p):
+    if(p%2==0):
+        for i in range(0,len(str1)-1,2):
+            print(str1[i+1],end=' ')
+    elif(p%2!=0):
+        for i in range(0,len(str1),2):
+            print(str1[i+1],end=' ')
+MANIP(input("ENTER THE STRING PLEASE : "),int(input("ENTER THE NUMBER PLEASE SO THAT STRING'S POSITION CAN BE DISPLAYED")))            
+    # CREATE A FUNCTION MANIP1 WHICH WILL TAKE 2 ARGUMENTS AS THEIR CHARACTER AND INTEGER AND DISPLAY THE SQUARE ROOT IF CHARACTER IS 'S'
+    # OTHERWISE DISPLAY THE CUBE ROOT.
+def MANIP1(chr,i):
+    if(chr=='s' or chr=="S"):
+        print(i*i)
+    else:
+        print(i**3)
+MANIP1(input("ENTER ANY CHARACTER "),int(input("ENTER THE NUMBER YOU WANT : "))) 
+
 # 23.. to create 3 different functions and print the and print the highest one as per the Q.
 def compare_int(n1,n2):
     if(n1>n2):
