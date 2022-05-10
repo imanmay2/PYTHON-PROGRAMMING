@@ -18,9 +18,9 @@ def calculate(x,n):
         s=s+(find_power(x,a)/find_fact(b))
     return s
 def display():
-    return s
+    return calculate(x,n)
 x=int(input("ENTER YOUR DESIRED NUMBER: "))
 n=int(input("ENTER THE NUMBER OF TERMS OF THE SERTIES: "))
-display()
+print("THE SUM OF THE SERIES USING RECURSIVE TECHNNIQUE IS: ",display())
 
 
