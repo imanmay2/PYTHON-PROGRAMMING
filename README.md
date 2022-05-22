@@ -26,7 +26,7 @@ Hi, I am Manmay Chakraborty who is currently executing python codes in this repo
 
 ## Feedback
 
-If you have any feedback, feel free to reach out to me at manmaycoder@gmail.com
+If you have any feedback, feel free to reach out at manmaycoder@gmail.com
 
 
 ## 🛠 Skills
