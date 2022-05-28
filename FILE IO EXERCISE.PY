@@ -31,3 +31,10 @@ with open("poem1.txt") as f:
         if(i.isupper()):
             ct+=1
     print("The uppercase alphabets are as follows: ",ct)
+
+#7.Write a program that will copy one file's content to another.
+ # NOTE : that user should be asked to enter the file name.
+with open("poem1.txt") as f:
+    str1=f.read()
+with open(input("ENTER THE FILE NAME...WHERE YOU WANNA COPY : "),"w") as f1:
+    f1.write(str1)
