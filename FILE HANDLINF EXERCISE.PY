@@ -12,4 +12,14 @@ with open("poem1.txt") as f:
             th=th+1
     print("Count of the word 'to' and 'the' is: ",t,th,"respectively.")
 
-#5. 
+#5. Write a function AMCount() that will count the number of occurence of A,a or M,m does contain in the file.
+with open("ex.5.txt") as f:
+    ct_a=0
+    ct_m=0
+    for i in f.read():
+        if(i=='a' or i=="A"):
+            ct_a+=1
+        elif(i=='m' or i=="M"):
+            ct_m+=1
+    print("A or a : ",ct_a)
+    print("M or m : ",ct_m)
