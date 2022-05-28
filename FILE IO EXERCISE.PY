@@ -56,4 +56,14 @@ with open("lines.txt") as f:
     print("No. of lines starting with A is: ",ct)
 
 
+#19. Program that will print exactly those line which conatins 5 words in that file.
+with open("lines.txt") as f:
+    ct=1
+    for i in f.readlines():
+        for j in i:
+            if(j==' '):
+                ct+=1
+                if(ct==5):
+                    print(i)
+        
 

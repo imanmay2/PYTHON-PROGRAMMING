@@ -1,4 +1,5 @@
+There is a playground.
+There is a sample file.
 A boy is playing there.
-There is a playground
 An aeroplane is in the sky.
 Alphabets and numbers are allowed in the password.
