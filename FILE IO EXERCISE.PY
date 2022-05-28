@@ -47,4 +47,13 @@ def display():
                 print(i)
 display()
 
+# 11. Write a function to count the number of lines starting with A in lines.txt.
+with open("lines.txt") as f:
+    ct=0
+    for i in f.readlines():
+        if(i[0]=="A"):
+            ct+=1
+    print("No. of lines starting with A is: ",ct)
+
+
 
