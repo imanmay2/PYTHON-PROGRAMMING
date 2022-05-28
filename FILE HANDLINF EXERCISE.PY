@@ -23,3 +23,11 @@ with open("ex.5.txt") as f:
             ct_m+=1
     print("A or a : ",ct_a)
     print("M or m : ",ct_m)
+
+#6. Program to count the number of uppercase alphabets present in the poem1.txt.
+with open("poem1.txt") as f:
+    ct=0
+    for i in f.read():
+        if(i.isupper()):
+            ct+=1
+    print("The uppercase alphabets are as follows: ",ct)
