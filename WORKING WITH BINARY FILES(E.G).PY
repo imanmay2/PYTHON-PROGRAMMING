@@ -26,4 +26,5 @@ with open("stu.dat","wb") as f:
         stu["Marks"]=marks
         pickle.dump(stu,f)
         ans=input("Wanna add some more input????")
-        
+
+
