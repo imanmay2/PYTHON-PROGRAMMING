@@ -34,3 +34,13 @@ with open("stu.dat","rb") as f3:
     except EOFError:
         f3.close()
 
+#3.Write A program from the file named myfile.info ..print the letters from starting until the letter 'o' is encountered.
+with open("myfile.info","wb") as f4:
+    pickle.dump(input("Enter the string you wanna enter: "),f4)
+with open("myfile.info","rb") as f5:
+    li=pickle.load(f5).split('o')
+    print(li[0])
+    print(li)
+
+
+
