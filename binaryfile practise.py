@@ -12,3 +12,25 @@ with open("emp.dat","rb") as f1:
             print(pickle.load(f1))
     except EOFError:
         f1.close()
+
+#2.WAP to get student data such as roll no., name and marks from the user and write onto the binaryfile.The program should be able 
+#to get the data from the user and write onto as long as user wants.AND ALSO PRINT THE DICTIONARIES IN THE PYTHON SHELL.
+stu={}
+with open("stu.dat","wb") as f2:
+    ans="y"
+    while ans=="y":
+        r=int(input("Enter the roll number please: "))
+        n=input("Enter the name please: ")
+        m=float(input("Enter the marks please: "))
+        stu["Roll"]=r
+        stu["Name"]=n
+        stu["Marks"]=m
+        pickle.dump(stu,f2)
+        ans=input("DO YOU WANNA CONTINUE????ENTER y FOR YES OR n FOR NO")
+with open("stu.dat","rb") as f3:
+    try: 
+        while True:
+            print(pickle.load(f3))
+    except EOFError:
+        f3.close()
+
