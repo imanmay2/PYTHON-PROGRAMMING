@@ -40,7 +40,6 @@ with open("myfile.info","wb") as f4:
 with open("myfile.info","rb") as f5:
     li=pickle.load(f5).split('o')
     print(li[0])
-    print(li)
 
 
 
