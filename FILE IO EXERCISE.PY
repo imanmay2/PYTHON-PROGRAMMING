@@ -13,6 +13,10 @@ with open("space.txt","r") as f:
 #2. create a file named as sports.dat that conatins ....Event ~ Participants.Create another file named Atheletic.dat copying only those
 #records from sports.dat where the event nameis "Atheletics"
 
+
+
+#3. 
+
 #4. Write a program to count the words 'to' and 'the' from the text file named poem1.txt.
 with open("poem1.txt") as f:
     t=0
