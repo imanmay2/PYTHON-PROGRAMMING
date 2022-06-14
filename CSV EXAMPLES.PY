@@ -10,4 +10,15 @@ with open("stu.csv","w") as f1:
         m=float(input("Enter the marks of the student: "))
         f.writerow([r,n,m])
     
-        
+#Using the function of writerows()
+with open("result.csv","w") as f:
+    wr=csv.writer(f)
+    wr.writerows(
+        [
+            ["Name","Points","Rank"]
+            ["Shradha","4500","23"]
+            ["Nischay","4800","31"]
+            ["Ali","4500","25"]
+            ["Adi","5100","14"]
+        ]
+    )
