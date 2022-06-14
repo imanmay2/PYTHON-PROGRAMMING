@@ -22,3 +22,9 @@ with open("result.csv","w") as f:
             ["Adi","5100","14"]
         ]
     )
+
+
+#trying the delimiter .
+with open("delimiter.csv","w") as f3:
+    deli=csv.writer(f3)
+    deli.writerow(["Name","Points","Rank"])
