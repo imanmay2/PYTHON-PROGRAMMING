@@ -30,8 +30,16 @@ with open("delimiter.csv","w") as f3:
     deli.writerow(["Name","Points","Rank"])
 
 
-#display the file result.csv
+#display the file result.csv with brackets.
 with open("result.csv","r") as f4:
     t=csv.reader(f4)
     for i in t:
         print(i)
+
+#display the file result.csv without printing brackets.
+with open("result.csv","r", newline="\r\n") as f4:
+    t=csv.reader(f4)
+    for i in t:
+        print(i)
+
+
