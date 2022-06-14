@@ -28,3 +28,10 @@ with open("result.csv","w") as f:
 with open("delimiter.csv","w") as f3:
     deli=csv.writer(f3,delimeter="||")
     deli.writerow(["Name","Points","Rank"])
+
+
+#display the file result.csv
+with open("result.csv","r") as f4:
+    t=csv.reader(f4)
+    for i in t:
+        print(i)
