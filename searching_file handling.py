@@ -55,4 +55,5 @@ with open("stu1.dat","rb") as f3:
     except EOFError:
         if(f==0):
             print("NO RECORDS FOUND IN THE DATABASE.....")
-            f3.close()            
+            f3.close()
+
