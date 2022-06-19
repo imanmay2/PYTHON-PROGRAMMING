@@ -3,6 +3,7 @@
 
 #1. Wap that reads a text file  and creates another text file that is identical except that every sequence of consecutive blank spaces
 # is replaced by a single step.
+import pickle
 with open("space.txt","r") as f:
     li=f.read().split()
     print(li)
@@ -108,6 +109,22 @@ with open("dollar.txt") as o:
         elif(i=="$"):
             break
 print("NUMBER OF CHARACTERS PRESENT IN THE FILE UPTO $ CHARACTERS IS AS FOLLOWS: ",ct)
+
+#13. Write a program that appends any dictionary from the user in a .dat file
+member=dict()
+ans='y'
+while ans=="y":
+    with open("ex.dat","wb") as g:
+        mem=int(input("ENTER THE MEMBER NO. : "))
+        name=input("ENTER THE NAME OF THE MEMBER: ")
+        member["MemberN0."]=mem
+        member["Name"]=name
+        pickle.dump(member,g)
+        ans=input("DO YOU WANNA ENTER MORE ENTRIES: ??")
+
+
+
+
 
 #19. Program that will print exactly those line which conatins 5 words in that file.
 with open("lines.txt") as f:
