@@ -99,6 +99,16 @@ with open("lines.txt") as f:
     print("No. of lines starting with A is: ",ct)
 
 
+#12.Write a program o count the letters present in the file upto $ sign.
+with open("dollar.txt") as o:
+    ct=0
+    for i in o.read():
+        if(i!=' ' and i!="$"):
+            ct+=1
+        elif(i=="$"):
+            break
+print("NUMBER OF CHARACTERS PRESENT IN THE FILE UPTO $ CHARACTERS IS AS FOLLOWS: ",ct)
+
 #19. Program that will print exactly those line which conatins 5 words in that file.
 with open("lines.txt") as f:
     ct=1
