@@ -79,14 +79,14 @@ display()
 s=input("ENTER THE STRING: ")
 for i in s:
     if(i.islower()):
-        with open("lower.txt","w") as l:
-            l.write(i)
+        with open("lower.txt","a") as l:
+            l.append(i)
     elif(i.isupper()):
-        with open("upper.txt","w") as w:
-            w.write(i)
+        with open("upper.txt","a") as w:
+            w.append(i)
     else:
-        with open("others.txt","w") as h:
-            h.write(i)
+        with open("others.txt","a") as h:
+            h.append(i)
     
             
 
