@@ -72,6 +72,24 @@ def display():
                 print(i)
 display()
 
+
+
+#10. write a program that reads character from the keyboard one by one , all lower case letters get stored in the lower.txt and similarly
+# for upper and others file
+s=input("ENTER THE STRING: ")
+for i in s:
+    if(i.islower()):
+        with open("lower.txt","w") as l:
+            l.write(i)
+    elif(i.isupper()):
+        with open("upper.txt","w") as w:
+            w.write(i)
+    else:
+        with open("others.txt","w") as h:
+            h.write(i)
+    
+            
+
 # 11. Write a function to count the number of lines starting with A in lines.txt.
 with open("lines.txt") as f:
     ct=0
