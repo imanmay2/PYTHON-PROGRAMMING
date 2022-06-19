@@ -55,6 +55,15 @@ with open("poem1.txt") as f:
 with open(input("ENTER THE FILE NAME...WHERE YOU WANNA COPY : "),"w") as f1:
     f1.write(str1)
 
+
+#8.WAP that appends the contents of one file to another.Have the program take the filename from the user
+file_name=input("ENTER THE FILE_NAME: ")
+with open(poem.txt,"r") as y:
+    str1=y.read()
+with open(file_name.txt,"w") as j:
+    j.write(str1)
+
+
 #9. Write a function DISPLAY() and this will display those words which are less than 4.
 def display():
     with open("poem1.txt") as f:
