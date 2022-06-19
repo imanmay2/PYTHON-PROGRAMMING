@@ -1,5 +1,5 @@
 import csv
-with open("res1.csv","w",newline="\r\n") as f:
+with open("res2.csv","w") as f:
     wr=csv.writer(f)
     wr.writerows(
         [
@@ -8,3 +8,9 @@ with open("res1.csv","w",newline="\r\n") as f:
             ["Ali","4500","23"]
         ]
     )
+
+
+with open("res2.csv","r") as k:
+    f=csv.reader(k)
+    for i in f:
+        print(i)
