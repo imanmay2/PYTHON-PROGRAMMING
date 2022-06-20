@@ -110,7 +110,7 @@ with open("dollar.txt") as o:
             break
 print("NUMBER OF CHARACTERS PRESENT IN THE FILE UPTO $ CHARACTERS IS AS FOLLOWS: ",ct)
 
-#13. Write a program that appends any dictionary from the user in a .dat file
+#14. Write a program that appends any dictionary from the user in a .dat file
 member=dict()
 ans='y'
 while ans=="y":
@@ -122,6 +122,28 @@ while ans=="y":
         pickle.dump(member,g)
         ans=input("DO YOU WANNA ENTER MORE ENTRIES: ??")
 
+#15. write a method to search and display the content in a pickled file staff.dat where staffcode key of the dictionary is matching  with "S0105"
+def display():
+    staff=dict()
+    with open("staff.dat","wb") as st:
+        print("HOW MANY ENTRIES????YOU WANNA ENTER????")
+        n=int(input())
+        for i in range(n):
+            staff_code=input("ENTER THE STAFF CODE: ")
+            staff_name=input("ENTER THE NAME OF THE STAFF: ")
+            staff["Staff_Code"]=staff_code
+            staff["Name"]=staff_name
+            pickle.dump(staff,st)
+    with open("staff.dat","rb") as dk:
+        code=input("ENTER THE CODE OF THE STAFF MEMEBER: ")
+        try:
+            while True:
+                s=pickle.load(dk)
+                if(s["Staff_Code"]==code):
+                    print(s)
+        except EOFError:
+            dk.close() 
+display()
 
 
 
@@ -135,5 +157,10 @@ with open("lines.txt") as f:
                 ct+=1
                 if(ct==5):
                     print(i)
+
+
+#20. write a program whcih contains a tab delimeter.
+
+
         
 
