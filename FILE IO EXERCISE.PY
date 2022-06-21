@@ -162,5 +162,6 @@ with open("lines.txt") as f:
 #20. write a program whcih contains a tab delimeter.
 
 
+
         
 
