@@ -180,3 +180,13 @@ with open("ress.csv","r") as jh:
     for i in fg:
         print(i)
         
+
+#22/23.write a program that will read a .csv file and write it on the another file with different file name and delimiter.
+with open("result.csv","r",newline="\r\n") as rh:
+    oh=csv.reader(rh)
+    for i in oh:
+        with open("excer.csv","w",newline="\r\n") as jk:
+            kgf=csv.writer(jk)
+            kgf.writerow(i)
+    
+        
