@@ -4,6 +4,7 @@
 #1. Wap that reads a text file  and creates another text file that is identical except that every sequence of consecutive blank spaces
 # is replaced by a single step.
 import pickle
+import csv
 with open("space.txt","r") as f:
     li=f.read().split()
     print(li)
@@ -159,9 +160,23 @@ with open("lines.txt") as f:
                     print(i)
 
 
-#20. write a program whcih contains a tab delimeter.
+#20. write a program to read a csv file which contains a tab delimiter.
+with open("result.csv","r") as gh:
+    read=csv.reader(gh,delimiter='|')
+    for i in read:
+        print(i)
 
-
-
+#21. write a program to write a nested list and write it on a csv file. after that display the content that has been written over there.
+with open("ress.csv","w") as dh:
+    fh=csv.writer(dh)
+    li=[
+        ["Name","Class","Roll"],
+        ["Manmay","XII","02"],
+        ["Soumya","X","04"]
+    ]
+    fh.writerows(li)
+with open("ress.csv","r") as jh:
+    fg=csv.reader(jh)
+    for i in fg:
+        print(i)
         
-
