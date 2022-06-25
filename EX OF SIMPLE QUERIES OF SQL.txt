@@ -1,0 +1,232 @@
+Microsoft Windows [Version 10.0.19044.1766]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Windows 10>mysql -u root -p
+Enter password: ********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.27 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+					QUESTION NUMBER 10.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| dbase              |
+| hello              |
+| homework           |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| school             |
+| sys                |
+| world              |
++--------------------+
+10 rows in set (0.03 sec)
+
+mysql> use hello;
+Database changed
+mysql> show tables;
++-----------------+
+| Tables_in_hello |
++-----------------+
+| club            |
+| garment         |
+| graduate        |
+| graduate1       |
+| library         |
+| mov             |
+| sports          |
+| stud            |
+| student         |
+| teacher         |
+| todo            |
+| todo1           |
+| todo2           |
++-----------------+
+13 rows in set (0.05 sec)
+
+mysql> select * from student;
++-----------+-------+---------+------------+--------+-------------+--------+
+| StudentNo | Class | Name    | GAME       | Grader | SUPW        | Grade2 |
++-----------+-------+---------+------------+--------+-------------+--------+
+|        10 |     7 | Sammer  | Cricket    | B      | Photography | A      |
+|        11 |     8 | Sujit   | Tennis     | A      | Gardening   | C      |
+|        12 |     7 | Kamal   | Swimming   | B      | Photography | B      |
+|        13 |     7 | Veena   | Tennis     | C      | Cooking     | A      |
+|        14 |     9 | Archana | BasketBall | A      | Literarture | A      |
+|        15 |    10 | Arpit   | Cricket    | A      | Gardening   | C      |
++-----------+-------+---------+------------+--------+-------------+--------+
+6 rows in set (0.08 sec)
+
+mysql> select Name from student where Grader="C" or Grade2="C";
++-------+
+| Name  |
++-------+
+| Sujit |
+| Veena |
+| Arpit |
++-------+
+3 rows in set (0.00 sec)
+
+mysql> select Game "Different Games Offered in the school" from student;
++---------------------------------------+
+| Different Games Offered in the school |
++---------------------------------------+
+| Cricket                               |
+| Tennis                                |
+| Swimming                              |
+| Tennis                                |
+| BasketBall                            |
+| Cricket                               |
++---------------------------------------+
+6 rows in set (0.00 sec)
+
+mysql> select SUPW from student where name like "A%";
++-------------+
+| SUPW        |
++-------------+
+| Literarture |
+| Gardening   |
++-------------+
+2 rows in set (0.00 sec)
+
+mysql>
+				QUESTION NUMBER 11.
+mysql> use hello;
+Database changed
+mysql> show tables;
++-----------------+
+| Tables_in_hello |
++-----------------+
+| club            |
+| garment         |
+| graduate        |
+| graduate1       |
+| library         |
+| mov             |
+| sports          |
+| stud            |
+| student         |
+| teacher         |
+| todo            |
+| todo1           |
+| todo2           |
++-----------------+
+13 rows in set (0.03 sec)
+
+mysql> select * from sports;
++-----------+-------+---------+------------+--------+-----------+--------+
+| StudentNo | Class | Name    | Game1      | Grade1 | Games2    | Grade2 |
++-----------+-------+---------+------------+--------+-----------+--------+
+|        10 |     7 | Sammer  | Cricket    | B      | Swimming  | A      |
+|        11 |     8 | Sujit   | Tennis     | A      | Skatting  | C      |
+|        12 |     7 | Kamal   | Swimming   | B      | Football  | B      |
+|        13 |     7 | Venna   | Tennis     | B      | Tennis    | A      |
+|        14 |     9 | Archana | Basketball | A      | Cricket   | A      |
+|        15 |    10 | Arpit   | Cricket    | A      | Athletics | C      |
++-----------+-------+---------+------------+--------+-----------+--------+
+6 rows in set (0.05 sec)
+
+mysql> select Name from sports where Grade1="C" or Grade2="C";
++-------+
+| Name  |
++-------+
+| Sujit |
+| Arpit |
++-------+
+2 rows in set (0.00 sec)
+mysql> select Name from sports where Game1=Games2;
++-------+
+| Name  |
++-------+
+| Venna |
++-------+
+1 row in set (0.00 sec)
+ 
+mysql> select game1,games2 from sports where name like "A%";
++------------+-----------+
+| game1      | games2    |
++------------+-----------+
+| Basketball | Cricket   |
+| Cricket    | Athletics |
++------------+-----------+
+2 rows in set (0.00 sec)
+
+mysql>
+
+								QUESTION NUMBER 12.
+mysql> select * from club;
++----------+-----------+------+------------+------------+------+------+
+| COACH_ID | COACHNAME | AGE  | SPORTS     | DATEOFAPP  | PAY  | SEX  |
++----------+-----------+------+------------+------------+------+------+
+|        1 | KUKREJA   |   35 | KARATE     | 1996-03-27 | 1000 | M    |
+|        2 | RAVINA    |   34 | KARATE     | 1998-01-20 | 1200 | F    |
+|        3 | KARAN     |   34 | SQUASH     | 1998-02-19 | 2000 | M    |
+|        4 | TARUN     |   33 | BASKETBALL | 1998-01-01 | 1500 | M    |
+|        5 | ZUBIN     |   36 | SWIMMING   | 1998-01-12 |  750 | M    |
+|        6 | KETAKI    |   36 | SWIMMING   | 1998-02-24 |  800 | F    |
+|        7 | ANKITA    |   39 | SQUASH     | 1998-02-20 | 2200 | F    |
+|        8 | ZAREEN    |   37 | KARATE     | 1998-02-22 | 1100 | F    |
+|        9 | KUSH      |   41 | SWIMMING   | 1998-01-13 |  900 | M    |
+|       10 | SHALIYA   |   37 | BASKETBALL | 1998-02-19 | 1700 | M    |
++----------+-----------+------+------------+------------+------+------+
+10 rows in set (0.04 sec)
+
+mysql> select Coachname from club where sports="Swimming";
++-----------+
+| Coachname |
++-----------+
+| ZUBIN     |
+| KETAKI    |
+| KUSH      |
++-----------+
+3 rows in set (0.00 sec)
+
+mysql> select Coachname,DATEOFAPP from club order by DATEOFAPP desc;
++-----------+------------+
+| Coachname | DATEOFAPP  |
++-----------+------------+
+| KETAKI    | 1998-02-24 |
+| ZAREEN    | 1998-02-22 |
+| ANKITA    | 1998-02-20 |
+| KARAN     | 1998-02-19 |
+| SHALIYA   | 1998-02-19 |
+| RAVINA    | 1998-01-20 |
+| KUSH      | 1998-01-13 |
+| ZUBIN     | 1998-01-12 |
+| TARUN     | 1998-01-01 |
+| KUKREJA   | 1996-03-27 |
++-----------+------------+
+10 rows in set (0.00 sec)
+
+mysql> select Coachname,Pay,Age,0.15*pay "Bonus" from club;
++-----------+------+------+--------+
+| Coachname | Pay  | Age  | Bonus  |
++-----------+------+------+--------+
+| KUKREJA   | 1000 |   35 | 150.00 |
+| RAVINA    | 1200 |   34 | 180.00 |
+| KARAN     | 2000 |   34 | 300.00 |
+| TARUN     | 1500 |   33 | 225.00 |
+| ZUBIN     |  750 |   36 | 112.50 |
+| KETAKI    |  800 |   36 | 120.00 |
+| ANKITA    | 2200 |   39 | 330.00 |
+| ZAREEN    | 1100 |   37 | 165.00 |
+| KUSH      |  900 |   41 | 135.00 |
+| SHALIYA   | 1700 |   37 | 255.00 |
++-----------+------+------+--------+
+10 rows in set (0.00 sec)
+
+mysql>
+
+
