@@ -53,3 +53,7 @@ def DISPLAYWORDS():
                 str3+=i+" "
         return str3 
 print(DISPLAYWORDS())
+
+
+
+# write a function/method where to display the lines starting with A.
