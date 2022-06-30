@@ -41,3 +41,15 @@ def AMCount():
         print("M or m: ",ct_m)
 AMCount()
 
+# write a method/function DISPLAYWORDS() to read lines from any text file and display the words which are less  than 4
+def DISPLAYWORDS():
+    kf=input("ENter the file name which you wanna count the words: ")
+    with open(kf,"r") as kgf:
+        li=kgf.read().split()
+        ct=0
+        str3=" "
+        for i in li:
+            if(len(i)<4):
+                str3+=i+" "
+        return str3 
+print(DISPLAYWORDS())
