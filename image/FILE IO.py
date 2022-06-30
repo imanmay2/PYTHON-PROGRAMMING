@@ -39,4 +39,5 @@ def AMCount():
                 ct_m+=1
         print("A or a: ",ct_a)
         print("M or m: ",ct_m)
-        
+AMCount()
+
