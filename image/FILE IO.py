@@ -74,5 +74,5 @@ def count():
         for i in gf.read():
             if(i!=" "):
                 ct+=1
-    return ("THE SIZE OF THE FILE IS: ",ct,"Bytes")
-print(count())
+    return ct
+print("Size of the file is: ",count(),"Bytes")
