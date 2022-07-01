@@ -76,3 +76,13 @@ def count():
                 ct+=1
     return ct
 print("Size of the file is: ",count(),"Bytes")
+
+
+
+# create a file with some name separated by newline characters with out using write() function.
+with open("trialio.txt",'w') as jk:
+    li=[]
+    for i in range(input("enter the number of names you wanna enter: ")):
+        name=input("enter the name you want: ")
+        li.append(name)
+    jk.writelines(li)
