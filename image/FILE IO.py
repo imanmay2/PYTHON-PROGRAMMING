@@ -65,3 +65,14 @@ def start():
                 str_1=str_1+i
         return (str_1)
 print(start())
+
+
+#create a function/method named count which will count the size of the file and display it's size in bytes.
+def count():
+    ct=0
+    with open(input("Enter the size of the file which you wanna count the size: ")) as gf:
+        for i in gf.read():
+            if(i!=" "):
+                ct+=1
+    return ("THE SIZE OF THE FILE IS: ",ct,"Bytes")
+print(count())
