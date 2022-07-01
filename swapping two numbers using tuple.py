@@ -1,5 +1,0 @@
-a=int(input("enter the number"))
-b=int(input("enter the number"))
-print("the number that you have entered is",a,b)
-(a,b)=(b,a)
-print("the numbers are now that are after swapping is",a,b,end=' ')

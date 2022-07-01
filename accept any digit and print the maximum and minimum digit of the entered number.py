@@ -1,6 +1,0 @@
-n=input("enter the number")
-l=list(n)
-maxi=max(l)
-mini=min(l)
-print("the largest digit is",maxi)
-print("the smallest digit is",mini)

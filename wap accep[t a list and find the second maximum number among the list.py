@@ -1,6 +1,0 @@
-li=eval(input("enter the list you want ot enter"))
-print("the list you have entered is")
-print(li)
-maxi=max(li)
-li.remove(maxi)
-print("the second biggest number is",max(li))

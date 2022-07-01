@@ -1,6 +1,0 @@
-str1=input("enter the string")
-for i in str1:
-    if(i=="A" or i=="a" or i=="e" or i=="E" or i=="i" or i=="I" or i=="o" or i=="O" or i=="u" or i=="U"):
-        str1=str1.replace(i,"*")
-print("required output is",str1)
-        
