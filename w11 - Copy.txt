@@ -1,0 +1,5 @@
+with open("w.txt") as f1:
+    k=f1.readlines()
+    for i in k:
+        if(i[0].isupper()):
+            print(i)

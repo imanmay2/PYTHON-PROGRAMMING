@@ -1,0 +1,522 @@
+Microsoft Windows [Version 10.0.19044.1766]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Windows 10>mysql -u root -p
+Enter password: ********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.27 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| dbase              |
+| hello              |
+| homework           |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| school             |
+| sys                |
+| world              |
++--------------------+
+10 rows in set (0.11 sec)
+
+mysql> show tables;
+ERROR 1046 (3D000): No database selected
+mysql> use school;
+Database changed
+mysql> show tables;
++------------------+
+| Tables_in_school |
++------------------+
+| employee         |
+| empsalary        |
++------------------+
+2 rows in set (0.09 sec)
+
+mysql> create table TRAINER(TID int(3),TNAME varchar(24),CITY varchar(24),HIREDATE date,SALARY int(5));
+Query OK, 0 rows affected, 2 warnings (1.50 sec)
+
+mysql> desc trainer;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| TID      | int         | YES  |     | NULL    |       |
+| TNAME    | varchar(24) | YES  |     | NULL    |       |
+| CITY     | varchar(24) | YES  |     | NULL    |       |
+| HIREDATE | date        | YES  |     | NULL    |       |
+| SALARY   | int         | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+5 rows in set (0.30 sec)
+
+mysql> insert into TRAINER values(101,"SUNAINA","MUMBAI","1998-10-15",90000);
+Query OK, 1 row affected (0.11 sec)
+
+mysql> insert into TRAINER values(102,"ANAMIKA","DELHI","1994-12-24",80000);
+Query OK, 1 row affected (0.19 sec)
+
+mysql> insert into TRAINER values(103,"DEEPTI","CHANDIGARH","2001-12-21",82000);
+Query OK, 1 row affected (0.09 sec)
+
+mysql> insert into TRAINER values(104,"MEENAKSHI","DELHI","2002-12-25",78000);
+Query OK, 1 row affected (0.19 sec)
+
+mysql> insert into TRAINER values(105,"RICHA","CHENNAI","1996-01-12",95000);
+Query OK, 1 row affected (0.16 sec)
+
+mysql> insert into TRAINER values(106,"MANIPRABHA","MUMBAI","2001-12-12",69000);
+Query OK, 1 row affected (0.21 sec)
+
+mysql> select * from TRAINER;
++------+------------+------------+------------+--------+
+| TID  | TNAME      | CITY       | HIREDATE   | SALARY |
++------+------------+------------+------------+--------+
+|  101 | SUNAINA    | MUMBAI     | 1998-10-15 |  90000 |
+|  102 | ANAMIKA    | DELHI      | 1994-12-24 |  80000 |
+|  103 | DEEPTI     | CHANDIGARH | 2001-12-21 |  82000 |
+|  104 | MEENAKSHI  | DELHI      | 2002-12-25 |  78000 |
+|  105 | RICHA      | CHENNAI    | 1996-01-12 |  95000 |
+|  106 | MANIPRABHA | MUMBAI     | 2001-12-12 |  69000 |
++------+------------+------------+------------+--------+
+6 rows in set (0.00 sec)
+
+
+
+
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| dbase              |
+| hello              |
+| homework           |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| school             |
+| sys                |
+| world              |
++--------------------+
+10 rows in set (0.00 sec)
+
+mysql> use school;
+Database changed
+mysql> show tables;
++------------------+
+| Tables_in_school |
++------------------+
+| course           |
+| employee         |
+| empsalary        |
+| trainer          |
++------------------+
+4 rows in set (0.02 sec)
+
+mysql> select * from course
+    -> ^C
+mysql> select * from course;
+Empty set (0.00 sec)
+
+mysql> desc course;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| CID       | varchar(4)  | NO   | PRI | NULL    |       |
+| CNAME     | varchar(24) | YES  |     | NULL    |       |
+| FEES      | int         | YES  |     | NULL    |       |
+| STARTDATE | date        | YES  |     | NULL    |       |
+| TID       | int         | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> insert into course values("C201","AGDCA",12000,"2018-07-02",101);
+Query OK, 1 row affected (0.11 sec)
+
+mysql> insert into course values("C202","ADCA",15000,"2018-07-15",103);
+Query OK, 1 row affected (0.11 sec)
+
+mysql> insert into course values("C203","DCA",10000,"2018-010-01",102);
+Query OK, 1 row affected (0.16 sec)
+
+mysql> insert into course values("C204","DDTP",9000,"2018-09-15",104);
+Query OK, 1 row affected (0.21 sec)
+
+mysql> insert into course values("C205","DHN",20000,"2018-08-01",101);
+Query OK, 1 row affected (0.09 sec)
+
+mysql> insert into course values("C206","O LEVEL",18000,"2018-07-25",105);
+Query OK, 1 row affected (0.20 sec)
+
+mysql> select * from COURSE;
++------+---------+-------+------------+------+
+| CID  | CNAME   | FEES  | STARTDATE  | TID  |
++------+---------+-------+------------+------+
+| C201 | AGDCA   | 12000 | 2018-07-02 |  101 |
+| C202 | ADCA    | 15000 | 2018-07-15 |  103 |
+| C203 | DCA     | 10000 | 2018-10-01 |  102 |
+| C204 | DDTP    |  9000 | 2018-09-15 |  104 |
+| C205 | DHN     | 20000 | 2018-08-01 |  101 |
+| C206 | O LEVEL | 18000 | 2018-07-25 |  105 |
++------+---------+-------+------------+------+
+6 rows in set (0.10 sec)
+
+mysql> select * from TRAINER;
++------+------------+------------+------------+--------+
+| TID  | TNAME      | CITY       | HIREDATE   | SALARY |
++------+------------+------------+------------+--------+
+|  101 | SUNAINA    | MUMBAI     | 1998-10-15 |  90000 |
+|  102 | ANAMIKA    | DELHI      | 1994-12-24 |  80000 |
+|  103 | DEEPTI     | CHANDIGARH | 2001-12-21 |  82000 |
+|  104 | MEENAKSHI  | DELHI      | 2002-12-25 |  78000 |
+|  105 | RICHA      | CHENNAI    | 1996-01-12 |  95000 |
+|  106 | MANIPRABHA | MUMBAI     | 2001-12-12 |  69000 |
++------+------------+------------+------------+--------+
+6 rows in set (0.12 sec)
+
+mysql> select TNAME,CITY,SALARY from TRAINER order by HIREDATE desc;
++------------+------------+--------+
+| TNAME      | CITY       | SALARY |
++------------+------------+--------+
+| MEENAKSHI  | DELHI      |  78000 |
+| DEEPTI     | CHANDIGARH |  82000 |
+| MANIPRABHA | MUMBAI     |  69000 |
+| SUNAINA    | MUMBAI     |  90000 |
+| RICHA      | CHENNAI    |  95000 |
+| ANAMIKA    | DELHI      |  80000 |
++------------+------------+--------+
+6 rows in set (0.00 sec)
+
+mysql> select TNAME,CITY from TRAINER where HIREDATE>"2001-11-30" and HIREDATE<2002-01-01;
+Empty set, 1 warning (0.07 sec)
+
+mysql> select TNAME,CITY from TRAINER where HIREDATE in month(12) and year(2001);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'month(12) and year(2001)' at line 1
+mysql> select TNAME,HIREDATE,CNAME,STARTDATE from TRAINER,COURSE where TRAINER.TID=COURSE.TID and FEEs=>10000;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=>10000' at line 1
+mysql> select TNAME,HIREDATE,CNAME,STARTDATE from TRAINER,COURSE where TRAINER.TID=COURSE.TID and FEES=>10000;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=>10000' at line 1
+mysql> select TNAME,HIREDATE,CNAME,STARTDATE from TRAINER,COURSE where TRAINER.TID=COURSE.TID and FEES<=10000;
++-----------+------------+-------+------------+
+| TNAME     | HIREDATE   | CNAME | STARTDATE  |
++-----------+------------+-------+------------+
+| ANAMIKA   | 1994-12-24 | DCA   | 2018-10-01 |
+| MEENAKSHI | 2002-12-25 | DDTP  | 2018-09-15 |
++-----------+------------+-------+------------+
+2 rows in set (0.00 sec)
+
+mysql> select city,count(*) "No of Trainers" from TRAINER;
++--------+----------------+
+| city   | No of Trainers |
++--------+----------------+
+| MUMBAI |              6 |
++--------+----------------+
+1 row in set (0.14 sec)
+
+mysql> select city,count(*) "No of Trainers" from TRAINER group by city;;
++------------+----------------+
+| city       | No of Trainers |
++------------+----------------+
+| MUMBAI     |              2 |
+| DELHI      |              2 |
+| CHANDIGARH |              1 |
+| CHENNAI    |              1 |
++------------+----------------+
+4 rows in set (0.00 sec)
+
+ERROR:
+No query specified
+
+mysql>
+mysql> select TID,TNAME, from TRAINER where CITY not in("DELHI","MUMBAI");
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from TRAINER where CITY not in("DELHI","MUMBAI")' at line 1
+mysql> select distinct TID from COURSE;
++------+
+| TID  |
++------+
+|  101 |
+|  103 |
+|  102 |
+|  104 |
+|  105 |
++------+
+5 rows in set (0.00 sec)
+
+mysql> select TID,COUNT(*),MIN(FEES) from COURSE group by TID having COUNT(*)>1;
++------+----------+-----------+
+| TID  | COUNT(*) | MIN(FEES) |
++------+----------+-----------+
+|  101 |        2 |     12000 |
++------+----------+-----------+
+1 row in set (0.00 sec)
+
+mysql> select COUNT(*),SUM(FEES) from COURSE where STARTDATE<"2018-09-15";
++----------+-----------+
+| COUNT(*) | SUM(FEES) |
++----------+-----------+
+|        4 |     65000 |
++----------+-----------+
+1 row in set (0.00 sec)
+
+mysql>
+
+
+
+						Q : TO CREATE A TABLE NAMED STUDENT AND RUN THE FOLLOWING QUERIES....
+
+C:\Users\Windows 10>mysql -u root -p
+Enter password: ********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.27 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| dbase              |
+| hello              |
+| homework           |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| school             |
+| sys                |
+| world              |
++--------------------+
+10 rows in set (0.15 sec)
+
+mysql> use school;
+Database changed
+mysql> show tables;
++------------------+
+| Tables_in_school |
++------------------+
+| course           |
+| employee         |
+| empsalary        |
+| trainer          |
++------------------+
+4 rows in set (0.03 sec)
+
+mysql> select * from trainer;
++------+------------+------------+------------+--------+
+| TID  | TNAME      | CITY       | HIREDATE   | SALARY |
++------+------------+------------+------------+--------+
+|  101 | SUNAINA    | MUMBAI     | 1998-10-15 |  90000 |
+|  102 | ANAMIKA    | DELHI      | 1994-12-24 |  80000 |
+|  103 | DEEPTI     | CHANDIGARH | 2001-12-21 |  82000 |
+|  104 | MEENAKSHI  | DELHI      | 2002-12-25 |  78000 |
+|  105 | RICHA      | CHENNAI    | 1996-01-12 |  95000 |
+|  106 | MANIPRABHA | MUMBAI     | 2001-12-12 |  69000 |
++------+------------+------------+------------+--------+
+6 rows in set (0.09 sec)
+
+mysql> select * from course;
++------+---------+-------+------------+------+
+| CID  | CNAME   | FEES  | STARTDATE  | TID  |
++------+---------+-------+------------+------+
+| C201 | AGDCA   | 12000 | 2018-07-02 |  101 |
+| C202 | ADCA    | 15000 | 2018-07-15 |  103 |
+| C203 | DCA     | 10000 | 2018-10-01 |  102 |
+| C204 | DDTP    |  9000 | 2018-09-15 |  104 |
+| C205 | DHN     | 20000 | 2018-08-01 |  101 |
+| C206 | O LEVEL | 18000 | 2018-07-25 |  105 |
++------+---------+-------+------------+------+
+6 rows in set (0.03 sec)
+
+mysql> create table Student(RollNo int(1) Primary Key,Nmae varchar(24),Class varchar(3),DOB Date,Gender varchar(1),City varchar(24),Marks int(3));
+Query OK, 0 rows affected, 2 warnings (1.45 sec)
+
+mysql> desc student;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| RollNo | int         | NO   | PRI | NULL    |       |
+| Nmae   | varchar(24) | YES  |     | NULL    |       |
+| Class  | varchar(3)  | YES  |     | NULL    |       |
+| DOB    | date        | YES  |     | NULL    |       |
+| Gender | varchar(1)  | YES  |     | NULL    |       |
+| City   | varchar(24) | YES  |     | NULL    |       |
+| Marks  | int         | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+7 rows in set (0.17 sec)
+
+mysql> insert into Student values(1,"Nanda","X","1995-06-06","M","Agra",551);
+Query OK, 1 row affected (0.12 sec)
+
+mysql> insert into Student values(2,"Saurabh","XII","1993-05-07","M","Mumbai",462);
+Query OK, 1 row affected (0.15 sec)
+
+mysql> insert into Student values(3,"Sanal","XI","1994-05-06","F","Delhi",400);
+Query OK, 1 row affected (0.10 sec)
+
+mysql> insert into Student values(4,"Trisla","XII","1995-08-08","F","Mumbai",450);
+Query OK, 1 row affected (0.15 sec)
+
+mysql> insert into Student values(5,"Store","XII","1995-10-08","M","Delhi",369);
+Query OK, 1 row affected (0.09 sec)
+
+mysql> insert into Student values(6,"Marisla","XI","1994-12-12","F","Dubai",250);
+Query OK, 1 row affected (0.18 sec)
+
+mysql> insert into Student values(7,"Neha","X","1995-12-08","F","Moscow",377);
+Query OK, 1 row affected (0.18 sec)
+
+mysql> insert into Student values(8,"Nishant","X","1995-06-12","M","Moscow",489);
+Query OK, 1 row affected (0.10 sec)
+
+mysql> select * from Student;
++--------+---------+-------+------------+--------+--------+-------+
+| RollNo | Nmae    | Class | DOB        | Gender | City   | Marks |
++--------+---------+-------+------------+--------+--------+-------+
+|      1 | Nanda   | X     | 1995-06-06 | M      | Agra   |   551 |
+|      2 | Saurabh | XII   | 1993-05-07 | M      | Mumbai |   462 |
+|      3 | Sanal   | XI    | 1994-05-06 | F      | Delhi  |   400 |
+|      4 | Trisla  | XII   | 1995-08-08 | F      | Mumbai |   450 |
+|      5 | Store   | XII   | 1995-10-08 | M      | Delhi  |   369 |
+|      6 | Marisla | XI    | 1994-12-12 | F      | Dubai  |   250 |
+|      7 | Neha    | X     | 1995-12-08 | F      | Moscow |   377 |
+|      8 | Nishant | X     | 1995-06-12 | M      | Moscow |   489 |
++--------+---------+-------+------------+--------+--------+-------+
+8 rows in set (0.00 sec)
+
+mysql> select * from Student order by Name;
+ERROR 1054 (42S22): Unknown column 'Name' in 'order clause'
+mysql> select * from Student order by Nmae;
++--------+---------+-------+------------+--------+--------+-------+
+| RollNo | Nmae    | Class | DOB        | Gender | City   | Marks |
++--------+---------+-------+------------+--------+--------+-------+
+|      6 | Marisla | XI    | 1994-12-12 | F      | Dubai  |   250 |
+|      1 | Nanda   | X     | 1995-06-06 | M      | Agra   |   551 |
+|      7 | Neha    | X     | 1995-12-08 | F      | Moscow |   377 |
+|      8 | Nishant | X     | 1995-06-12 | M      | Moscow |   489 |
+|      3 | Sanal   | XI    | 1994-05-06 | F      | Delhi  |   400 |
+|      2 | Saurabh | XII   | 1993-05-07 | M      | Mumbai |   462 |
+|      5 | Store   | XII   | 1995-10-08 | M      | Delhi  |   369 |
+|      4 | Trisla  | XII   | 1995-08-08 | F      | Mumbai |   450 |
++--------+---------+-------+------------+--------+--------+-------+
+8 rows in set (0.02 sec)
+
+mysql> select Class,DOB,City,from Student where marks>450 and marks<551;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from Student where marks>450 and marks<551' at line 1
+mysql> select Class,DOB,Cityfrom Student where marks>450 and marks<551;
+ERROR 1054 (42S22): Unknown column 'Class' in 'field list'
+mysql> select Class,DOB,City from Student where marks>450 and marks<551;
++-------+------------+--------+
+| Class | DOB        | City   |
++-------+------------+--------+
+| XII   | 1993-05-07 | Mumbai |
+| X     | 1995-06-12 | Moscow |
++-------+------------+--------+
+2 rows in set (0.00 sec)
+
+mysql> select Nmae,Class, Count(*) "Total Number of Students" from Student where marks>450 group by class;
++---------+-------+--------------------------+
+| Nmae    | Class | Total Number of Students |
++---------+-------+--------------------------+
+| Nanda   | X     |                        2 |
+| Saurabh | XII   |                        1 |
++---------+-------+--------------------------+
+2 rows in set (0.10 sec)
+
+mysql> update student set marks=marks+20 where class="XII";
+Query OK, 3 rows affected (0.18 sec)
+Rows matched: 3  Changed: 3  Warnings: 0
+
+mysql> select * from Student;
++--------+---------+-------+------------+--------+--------+-------+
+| RollNo | Nmae    | Class | DOB        | Gender | City   | Marks |
++--------+---------+-------+------------+--------+--------+-------+
+|      1 | Nanda   | X     | 1995-06-06 | M      | Agra   |   551 |
+|      2 | Saurabh | XII   | 1993-05-07 | M      | Mumbai |   482 |
+|      3 | Sanal   | XI    | 1994-05-06 | F      | Delhi  |   400 |
+|      4 | Trisla  | XII   | 1995-08-08 | F      | Mumbai |   470 |
+|      5 | Store   | XII   | 1995-10-08 | M      | Delhi  |   389 |
+|      6 | Marisla | XI    | 1994-12-12 | F      | Dubai  |   250 |
+|      7 | Neha    | X     | 1995-12-08 | F      | Moscow |   377 |
+|      8 | Nishant | X     | 1995-06-12 | M      | Moscow |   489 |
++--------+---------+-------+------------+--------+--------+-------+
+8 rows in set (0.13 sec)
+
+mysql> update Student marks=marks+10 where RollNo=5;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=marks+10 where RollNo=5' at line 1
+mysql> update Student set marks=marks+10 where RollNo=5;
+Query OK, 1 row affected (0.22 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from Student;
++--------+---------+-------+------------+--------+--------+-------+
+| RollNo | Nmae    | Class | DOB        | Gender | City   | Marks |
++--------+---------+-------+------------+--------+--------+-------+
+|      1 | Nanda   | X     | 1995-06-06 | M      | Agra   |   551 |
+|      2 | Saurabh | XII   | 1993-05-07 | M      | Mumbai |   482 |
+|      3 | Sanal   | XI    | 1994-05-06 | F      | Delhi  |   400 |
+|      4 | Trisla  | XII   | 1995-08-08 | F      | Mumbai |   470 |
+|      5 | Store   | XII   | 1995-10-08 | M      | Delhi  |   399 |
+|      6 | Marisla | XI    | 1994-12-12 | F      | Dubai  |   250 |
+|      7 | Neha    | X     | 1995-12-08 | F      | Moscow |   377 |
+|      8 | Nishant | X     | 1995-06-12 | M      | Moscow |   489 |
++--------+---------+-------+------------+--------+--------+-------+
+8 rows in set (0.00 sec)
+
+mysql> select RollNo,Nmae "Name",Class from Student where DOB=year("!995");
+Empty set, 2 warnings (0.03 sec)
+
+mysql> select RollNo,Nmae "Name",Class from Student where DOB=year("1995");
+Empty set, 2 warnings (0.00 sec)
+
+mysql> select RollNo,Nmae "Name",Class from Student where DOB in between "1995-01-01" and "1995-12-01";;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'between "1995-01-01" and "1995-12-01"' at line 1
+ERROR:
+No query specified
+
+mysql> select RollNo,Nmae "Name",Class from Student where DOB in between "1995-01-01" and "1995-12-01";
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'between "1995-01-01" and "1995-12-01"' at line 1
+mysql> select RollNo,Nmae "Name",Class from Student where DOB in between ("1995-01-01" and "1995-12-01");
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'between ("1995-01-01" and "1995-12-01")' at line 1
+mysql> select City,count(*) from Student group by city;
++--------+----------+
+| City   | count(*) |
++--------+----------+
+| Agra   |        1 |
+| Mumbai |        2 |
+| Delhi  |        2 |
+| Dubai  |        1 |
+| Moscow |        2 |
++--------+----------+
+5 rows in set (0.00 sec)
+
+mysql> select * from student where Gender="F";
++--------+---------+-------+------------+--------+--------+-------+
+| RollNo | Nmae    | Class | DOB        | Gender | City   | Marks |
++--------+---------+-------+------------+--------+--------+-------+
+|      3 | Sanal   | XI    | 1994-05-06 | F      | Delhi  |   400 |
+|      4 | Trisla  | XII   | 1995-08-08 | F      | Mumbai |   470 |
+|      6 | Marisla | XI    | 1994-12-12 | F      | Dubai  |   250 |
+|      7 | Neha    | X     | 1995-12-08 | F      | Moscow |   377 |
++--------+---------+-------+------------+--------+--------+-------+
+4 rows in set (0.00 sec)
+
+mysql>

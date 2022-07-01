@@ -1,0 +1,107 @@
+#1. WAP THAT WILL CREATE 2 FUNCTIONS (1) AMOUNT-IN-DOLLARS (2) DOLLAR-TO-RUPEE CONVERSION PRICE.
+def amt_in_dollar():
+    d=int(input("ENTER THE AMOUNT IN DOLLARS: "))
+    return d
+d=int(amt_in_dollar())
+def convert(d):
+    con=d*76
+    return con
+print("YOU HAVE INPUTTED DOLLAR: ",d)
+print("CONVERTED IN RUPEE: ",convert(d))
+
+
+#2. WAP THAT WILL CALCULATE THE VOLUME OF A BOX.USER WILL BE GIVING IT;S DEFAULT PARAMETER LIKE LENGTH, HEIGHT AND WIDTH.
+def vol(l,w,h):
+    v=l*w*h
+    return v
+l=float(input("ENTER YOUR DESIRED LENGTH"))
+w=float(input("ENTER YOUR DESIRED WIDTH"))
+h=float(input("ENTER YOUR DESIRED HEIGHT"))
+print("VOLUME OF THE BOX IS AS FOLLOWS: ",vol(l,w,h))
+
+
+#3.WAP THAT WILL CREATE A FUNCTION THAT WILL ACCEPT A NUMBER AND DISPLAY THE CUBE OF THAT NUMBER.IF THE USER HASN'T ENTERED NOTHING THEN IT SHOULD PRINT THE CUBE ROOT OF 2.
+def yes(num):
+    print("CUBE OF THAT NUMBER IS AS FOLLOWS: ",num**3)
+def no():
+    print("CUBE OF 2 IS AS FOLLOWS: 8")
+str1=input("DO YOU WANT TO ENTER NUMBER").upper()
+if(str1=="YES"):
+    num=float(input("ENTER YOUR DESIRED NUMBER PLEASE: "))
+    yes(num)
+else:
+    no()
+# CREATE A FUNCTION THAT WILL TAKE TWO STRINGS AND PRINT TRUE IF BOTH THE STRINGS ARE SAME ELSE PRINT FALSE.
+def check(s1,s2):
+    if(s1==s2):
+        return True
+    else:
+        return False
+s1=input("ENTER THE STRING: ")
+s2=input("ENTER THE STRING: ")
+print("RESULT IS AS FOLLOWS: ",check(s1,s2))
+
+#4.WAP THAT WILL ACCCEPT 2 NUMBERS FROM THE USER AND USE IT AS PARAMETERS IN THAT VERY FUNCTION AND GENERATE RANDOM NUMBERS FROM THIS FUNCTION.
+# DISPLAY THREE NUMBERS RANDOMELY FROM THIS RANGE.
+import random
+def gen(n1,n2):
+    return random.randint(n1,n2)
+n1=int(input("ENTER THE FIRST NUMBER YOU WANT: "))
+n2=int(input("ENTER THE SECOND NUMBER YOU WANT TO ENTER: "))
+print("THREE NUMBERS GENERATED RANDOMELY IS AS FOLLOWS: ",gen(n1,n2),gen(n1,n2),gen(n1,n2))
+
+
+#5. WAP THAT WILL ACCEPT TWO STRINGS AND RETURNS TRUE IF THE LENGTH OF BOTH THE STRING IS SAME OTHERWISE RETURN FALSE.
+def check(s1,s2):
+    if(len(s1)==len(s2)):
+        return True
+    else:
+        return False
+s1=input("ENTER THE STRING YOU WANT")
+s2=input("ENTER THE STRING YOU WANT: ")
+print("FAVOURABLE RESULTS IS AS FOLLOWS: ",check(s1,s2))
+
+
+#6.WAP THAT WILL ACCEPT TWO NUMBERS NAME X AND N AS THE FUNCTION'S PARAMETER AND DISPLAY X TO THE POWER OF(N)INVERSE.
+def root(x,n):
+    return x**(1/n)
+x=int(input("ENTER THE NUMBER: "))
+n=int(input("ENTER THE NUMBER TO BE ROOTED OVER THE PREVIOUS NUMBER: "))
+print("FAVOURABLE RESULT IS AS FOLLOWS: ",root(x,n))
+
+#7.WAP THAT WILL ACCEPT A NUMBER AND DISPLAY THE RANDOM NUMBER OF THAT VERY DIGIT USING A FUNCTION.
+# E.G....USER HAS INPUTTED 2.....SO IT SHOUKD PRINT THE RESULT OF ANY 2 DIGIT RANDOM NUMBER SUCH AS 88.
+import random
+def gen(d):
+    num=random.randint(s,e)
+    return num
+d=int(input("ENTER THE NUMBER YOU WANT: "))
+s=int('9'*(d-1))+1
+e=int('9'*d)
+print("RANDOM",d,"DIGIT NUMBER IS AS FOLLOWS: ",gen(d))
+
+#8. WAP THAT CREATES A FUNCTION WHICH WILL TAKE 2 NUMBERS AND SIMULTANEOUSLY RETURNS THE NUMBER THAT HAS MINIMUM ONE'S DIGIT NUMBER.
+def check(n1,n2):
+    f=n1%10
+    l=n2%10
+    if(f>l):
+        return n2
+    elif(f<l):
+        return n1
+    else:
+        print("WRONG INPUT !!!! PLEASE TRY AGAIN")
+
+n1=int(input("ENTER THE NUNBER YOU WANT"))
+n2=int(input("ENTER THE NUNBER YOU WANT"))
+print("NUMBER MINIMUM TO THAT OF IT'S ONE DIGIT IS AS FOLLOWS: ",check(n1,n2))
+
+
+#9. WAP THAT WILL CREATE A FUNCTION THAT WILL GENERATE A SERIESWHICH TAKES FIRST AND LAST VALUES OF THAT SERIES.
+def series(f,l):
+    for i in range(f,l+1):
+        if(i%2!=0):
+            print(i,end=' ')
+f=int(input("ENTER THE FIRST VALUE: "))
+l=int(input("ENTER THE LAST VALUE:  "))
+print("SERIES IS AS FOLLOWS: ")
+series(f,l)     

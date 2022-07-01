@@ -1,0 +1,13 @@
+Frequency of the words are{
+ "THOSE": 2,
+ "WHO": 2,
+ "IS": 3,
+ "SEE": 2,
+ "MY": 1,
+ "FILE": 2,
+ "A": 2,
+ "MONKEY": 1,
+ "**&&%%##@@....": 1,
+ "VERY": 1,
+ "CHEATER": 1
+}
