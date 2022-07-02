@@ -10,7 +10,3 @@ def AMCount():
     return ct,ct_m
 print("Count of A ora and M or m is: ",AMCount(),respectively)
 
-#2. 
-import pickle
-def countrec():
-    
