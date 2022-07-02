@@ -97,3 +97,12 @@ def append():
             rec=name+roll+marks+"\n"
             fj.write(rec)
 append()
+
+
+# wap that will combine each line from first file with the corresponding line with the second line.
+with open("poem1.txt") as f:
+    with open("poem.txt") as g:
+        str=''
+        while str:
+            str=f.readline()+g.readline()
+            print(str)
