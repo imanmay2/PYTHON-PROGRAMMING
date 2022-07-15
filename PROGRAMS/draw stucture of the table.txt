@@ -1,0 +1,138 @@
+Microsoft Windows [Version 10.0.19044.1826]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Windows 10>mysql -u root -p
+Enter password: ********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.27 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+
+
+								HW QUESTION NUMBER : 1
+
+
+
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| dbase              |
+| hello              |
+| homework           |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| school             |
+| sys                |
+| world              |
++--------------------+
+10 rows in set (0.26 sec)
+
+mysql> use hello;
+Database changed
+mysql> show tables;
++-----------------+
+| Tables_in_hello |
++-----------------+
+| club            |
+| garment         |
+| graduate        |
+| graduate1       |
+| library         |
+| match_details   |
+| mov             |
+| sports          |
+| stud            |
+| student         |
+| teacher         |
+| todo            |
+| todo1           |
+| todo2           |
++-----------------+
+14 rows in set (0.11 sec)
+
+mysql> create table library1(ACC_NO char(5),BITTLE char(30),AUTHOR1 char(30),AUTHOR2 char(30),PUB_ID int(4),PRICE int(8),PDATE date,PAGES int(4),EDITION int(4),STATUS char(1));
+Query OK, 0 rows affected, 4 warnings (2.16 sec)
+
+mysql> desc library1;
++---------+----------+------+-----+---------+-------+
+| Field   | Type     | Null | Key | Default | Extra |
++---------+----------+------+-----+---------+-------+
+| ACC_NO  | char(5)  | YES  |     | NULL    |       |
+| BITTLE  | char(30) | YES  |     | NULL    |       |
+| AUTHOR1 | char(30) | YES  |     | NULL    |       |
+| AUTHOR2 | char(30) | YES  |     | NULL    |       |
+| PUB_ID  | int      | YES  |     | NULL    |       |
+| PRICE   | int      | YES  |     | NULL    |       |
+| PDATE   | date     | YES  |     | NULL    |       |
+| PAGES   | int      | YES  |     | NULL    |       |
+| EDITION | int      | YES  |     | NULL    |       |
+| STATUS  | char(1)  | YES  |     | NULL    |       |
++---------+----------+------+-----+---------+-------+
+10 rows in set (0.19 sec)
+
+mysql>
+
+
+
+
+
+
+
+
+
+
+
+								HW QUESTION NUMBER : 2
+
+mysql> use hello;
+Database changed
+mysql> show tables;
++-----------------+
+| Tables_in_hello |
++-----------------+
+| club            |
+| garment         |
+| graduate        |
+| graduate1       |
+| library         |
+| library1        |
+| match_details   |
+| mov             |
+| sports          |
+| stud            |
+| student         |
+| teacher         |
+| todo            |
+| todo1           |
+| todo2           |
++-----------------+
+15 rows in set (0.04 sec)
+
+mysql> create table publisher(PUB_ID int(4),PUB_NAME char(30),PUB_ADDRESS char(40),PUB_PHONE1 char(10),PUB_PHONE2 char(10));
+Query OK, 0 rows affected, 1 warning (0.57 sec)
+
+mysql> desc publisher;
++-------------+----------+------+-----+---------+-------+
+| Field       | Type     | Null | Key | Default | Extra |
++-------------+----------+------+-----+---------+-------+
+| PUB_ID      | int      | YES  |     | NULL    |       |
+| PUB_NAME    | char(30) | YES  |     | NULL    |       |
+| PUB_ADDRESS | char(40) | YES  |     | NULL    |       |
+| PUB_PHONE1  | char(10) | YES  |     | NULL    |       |
+| PUB_PHONE2  | char(10) | YES  |     | NULL    |       |
++-------------+----------+------+-----+---------+-------+
+5 rows in set (0.25 sec)
+
+mysql>
