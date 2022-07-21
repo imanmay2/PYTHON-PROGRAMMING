@@ -5,7 +5,7 @@ import time
 t=time.time()
 mycon=p.connect(host="localhost",user="root",passwd="25082004",database="hello")
 cursor=mycon.cursor()
-q1="create table if not exists rand_4_dig(SL_NO int(5),NUMBER int(5))"
+q1="create table rand_4_dig(SL_NO int(5),NUMBER int(5))"
 cursor.execute(q1)
 mycon.commit()
 
