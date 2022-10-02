@@ -1,8 +1,5 @@
-import pickle
-with open("stud11.dat","rb") as f:
-    try:
-        while True:
-            emp=pickle.load(f)
-            print(emp)
-    except EOFError:
-        f.close()
+li=['aaa',None,'hi',None]
+li.remove(None)
+print(li)
+li.remove(None)
+print(li)
