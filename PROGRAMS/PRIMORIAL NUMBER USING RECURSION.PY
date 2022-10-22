@@ -5,11 +5,20 @@ def prime(n):
             ct+=1
     if(ct==2):
         return True
-def fact(n):
-    if(fact(n)==1):
+def primo(n):
+    if(n==1):
         return 1
     else:
-        
+        if prime(n)==True:
+            return n*primo(n-1)
+        else:
+            return primo(n-1)
+
+num=int(input("Enter the number you want to enter: "))
+if(prime(num)==True):
+    print("PRIMORIAL OF THE NUMBER IS: ",primo(num))
+else:
+    print("....PRIME NUMBER NOT ENTERED....")
 
     
 
