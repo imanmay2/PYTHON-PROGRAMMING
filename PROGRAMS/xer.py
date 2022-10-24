@@ -22,9 +22,3 @@ def deci_hexa(deci):        # decimal to hexa decimal
             str4=str4+str(r)
         deci=deci//16
     return str4[::-1]
-
-
-
-n=int(input("Enter the number"))
-deci=bin_deci(n)
-print("HEXADECIMAL CONVERSION IS",deci_hexa(deci))
