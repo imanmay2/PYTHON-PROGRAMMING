@@ -1,10 +1,9 @@
-import mysql.connector as sqltor
-mycon=sqltor.connect(host="localhost",user="root",passwd="2%0*2)0$Happy",database="project")
+import mysql.connector as con
+mycon=con.connect(host='localhost',user='root',passwd='2%0*2)0$Happy',database='hello')
 cursor=mycon.cursor()
-cursor.execute("select * from {}".format("2xii"))
-data=cursor.fetchall()
+cursor.execute("select * from tkinter")
+data=cursor.fetchall()  
+items=list()
 for i in data:
-    for j in i:
-        print(j)
-
-
+    items.append(i[0])
+print(type(items))

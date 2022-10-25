@@ -1,7 +1,6 @@
 # Q1) Make a GUI application which ask user to enter messaages that store in your local db
 # store in encrypted version.
-# Q2) Make another application which fetches all the data from the db and
-# display it's decypted form.
+# 
 
 # if u wanna go a bit level then make the button in such a way that when the
 # message is of less than 10 characters then  the button will be grey color and non-functional
@@ -10,7 +9,7 @@
 
 from tkinter import *
 from tkinter import messagebox
-from xer import deci_hexa as e
+from xer import deci_hexa as e 
 import mysql.connector as con
 mycon=con.connect(host='localhost',user='root',passwd='2%0*2)0$Happy',database='hello')
 cursor=mycon.cursor()
@@ -32,7 +31,7 @@ def func():
         for k in li:
             str3+=k
         messagebox.showinfo("success",str3)
-        cursor.execute("insert into tkinter values({0},{1});".format(str3,str1))
+        cursor.execute("insert into tkinter values('{}');".format(str3))
         mycon.commit()
         
 var=StringVar()
