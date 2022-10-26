@@ -1,5 +1,5 @@
 from MATRIX_F import *
-n=[1,2,3,4,1,2,3,4,1,2,3,4,1,2,3,4,1,2,3,4,1,2]
+n=[1,2,3,4,1,2,3,4,1,2,3,4,1,2,3,4,1,2,3]
 l=len(n)
 li1=list()
 l=list()
@@ -12,8 +12,15 @@ for i in range(g):
         li1.append(l)
         ct=0
         l=[]
-
-print(li1)  
+r=len(n)-g
+if(r==1):
+    li1.append([n[-1]])
+elif(r==2):
+    li1.append([n[-2],n[-1]])
+elif(r==3):
+    li1.append([n[-3],n[-2],n[-1]])
+for i in li1:
+    print(i)
 #for i in range(4):
  #   if(i==0):
   #      li[0]=row_1(li[0])
@@ -22,3 +29,6 @@ print(li1)
     #elif(i==2):
      #   li[2]=row_3(li[2])
 
+
+
+     
