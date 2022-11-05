@@ -13,12 +13,12 @@ def calc(inp:str)->str:
             return False
 
     #t=str(date.today()).split('-')
-    t=["2022","11","01"]
+    t=["2020","11","01"]
     li_months=["January","February","March","April","May","June","July","August","September","October","November","December"]
     if(t[0]==inp[0]) and leap(int(inp[0])) and t[1]=='03' and inp[1]=='02' and t[2]=='01' and inp[2]=='29':
         return ("Yesterday")
     elif(t[0]==inp[0]) and not leap(int(inp[0])) and t[1]=='03' and inp[1]=='02'  and t[2]=='01' and inp[2]=='28':
-        return "yesterday"
+        return "Yesterday"
     elif(((t[2]=='01' and inp[2]=='31') or (t[2]=='01' and inp[2]=='30'))and t[0]==inp[0] and int(t[1])-1==int(inp[1])):
         return ("Yesterday")
     elif(int(t[2])-1==int(inp[2]) and t[0]==inp[0] and t[1]==inp[1]):
