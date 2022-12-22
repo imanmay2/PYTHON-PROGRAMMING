@@ -45,3 +45,12 @@ def func2():
                 ct+=1
         print("No. of lines starting with A: ",ct)
 func2()
+
+#5. Write a function that will transfer all the lines start with "A" from A.txt to B.txt
+def func3():
+    with open("A.txt") as f4:
+        with open("B.txt","w") as f5:
+            for i in f4.readlines():
+                if(i[0]=="A"):
+                    f5.write(i)
+func3()
