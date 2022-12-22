@@ -134,8 +134,42 @@ def func7(li):
 #    to perform the following operations based on this list
 #      i) Traverse the content of the list and push the even numbers into a stack.
 #      ii) Pop and display the content of the stack.
-
+def push(stk,item):
+    if(len(stk==10)):
+        print("OVERFLOW")
+    elif(item%2==0):
+        stk.append(item)
+    else:
+        print("NOT AN EVEN NUMBER....")
+def pop(stk):
+    if(stk==[]):
+        print("STACK IS EMPTY")
+    else:
+        print("The poped element from the stack is: ",stk.pop())
+def display(stk):
+    if stk==[]:
+        print("STACK IS EMPTY")
+    else:
+        print("STACK IS AS FOLLOWS: ")
+        for i in range(len(stk)-1,-1,-1):
+            print(stk[i])
+def execute():
+    print("STACKS OPERATION!!!!")
+    print("1. PUSH")
+    print("2. POP")
+    print("3. DISPLAY")
+    ch=int(input("Enter your choice: "))
+    if(ch==1):
+        item=int(input("Enter the item: "))
+        push(stk,item)
+    elif(ch==2):
+        pop(stk)
+    elif(ch==3):
+        display(stk)
+    else:
+        break
+execute()
 #12. Write a function in python POP(Arr), where Arr is a stack implemented by a list of numbers. 
 #    The function returns the content of the stack.
 
-
+# solution is same as the above program....
