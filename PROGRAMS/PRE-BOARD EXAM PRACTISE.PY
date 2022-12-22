@@ -130,6 +130,12 @@ def func7(li):
         s+=sum(i)
     print("Sum of the each coloumn is: ",s)
 
+#11. Amit has a list conataining 10 integers. You need to help him create a program with separate user defined functions 
+#    to perform the following operations based on this list
+#      i) Traverse the content of the list and push the even numbers into a stack.
+#      ii) Pop and display the content of the stack.
 
+#12. Write a function in python POP(Arr), where Arr is a stack implemented by a list of numbers. 
+#    The function returns the content of the stack.
 
 
