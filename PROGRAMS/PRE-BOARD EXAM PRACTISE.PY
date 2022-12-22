@@ -100,4 +100,36 @@ def transfer():
                 li[i][j]=0
             print(li[i][j],end=' ')
         print()
-transfer()
+
+
+#8. Write a function that will display the first and second diagonal of the 2d list 3 by 3 by a function .Function will accept the lost as parameter
+def func6(li):
+    l1=list()
+    l2=list()
+    for i in range(len(li)):
+        for j in range(len(li)):
+            if((i==0 and j==0) or (i==1 and j==1) or (i==2 and j==2)):
+                l1.append(li[i][j])
+            elif((i==0 and j==2) or (i==1 and j==1) or (i==2 and j==0)):
+                l2.append(li[i][j])
+    print("1st diagonal is: ")
+    for i in l1:
+        print(i,end=' ')
+    print("2nd diagonal is: ")
+    for i in l2:                
+        print(i,end=' ')
+
+
+
+#9. Write a function that will transpose the element of a 2d list of 3 by 3 and display in the matrix format.
+
+#10. Write a function that will display the sum of each column of a 2D list 3 by 3.
+def func7(li):
+    s=0
+    for i in li:
+        s+=sum(i)
+    print("Sum of the each coloumn is: ",s)
+
+
+
+
