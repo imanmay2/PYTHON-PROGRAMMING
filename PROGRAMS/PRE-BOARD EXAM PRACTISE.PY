@@ -25,3 +25,14 @@ def AMCount():
         print("Occurences of A: ",ct_A)
         print("Occurences of M: ",ct_M)
 AMCount()
+
+
+#3. Write a method/function DISPLAYWORDS() in python to read lines from a text file STORY.TXT and display those words which are less than 4 characters.
+def DISPLAYWORDS():
+    with open("STORY.TXT") as f2:
+        for i in f2.readlines():
+            if(len(i)<4):
+                print(i)
+DISPLAYWORDS()
+
+
