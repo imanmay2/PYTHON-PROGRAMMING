@@ -66,7 +66,7 @@ def func3():
 #solution of i)
 import pickle
 def func4():
-    with open("Book.dat") as f6:
+    with open("Book.dat","wb") as f6:
         d=dict()
         for i in range(int(input("Enter the range: "))):
             d["BookNo"]=int(input("Enter the book no. : "))
@@ -75,5 +75,29 @@ def func4():
             d["Price"]=float(input("Enter the price of the book: "))
             pickle.dump(d,f6)
 #Solution of ii)
+def func5(Author_Name):
+    with open("Book.dat","rb") as f7:
+        ct_book=0
+        try:
+            while True:
+                    dic=pickle.load(f7)
+                    if(dic["Author"]==Author_Name):
+                        ct_book+=1
+        except EOFError:
+            return ct_book
 
-
+#7. Elements of a list L is 1,2,3. write a function transfer() that will transfer the element of the L in a 2d list 3 by 3.
+# in such a way that the resultant 2D list will be like
+#   1 2 3
+#   1 2 0
+#   1 0 0
+def transfer():
+    L=[1,2,3]
+    li=[L,L,L]
+    for i in range(len(li)):
+        for j in range(len(li)):
+            if((i==1 and j==2) or (i==2 and j==1) or (i==2 and j==2)):
+                li[i][j]=0
+            print(li[i][j],end=' ')
+        print()
+transfer()
