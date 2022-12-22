@@ -20,7 +20,7 @@ def display(stk):
         print("stack is empty")
     else:
         print("stack is as follows: ")
-        for i in stk:
+        for i in range(len(stk)-1,-1,-1):
             print(i)
 # main code starts now.........
 stk=[]
@@ -34,7 +34,7 @@ while True:
     print("5. EXIT!!")
     ch=int(input("Enter the choice: "))
     if(ch==1):
-        item int(input("Enter the item to be pushed into the stack: "))
+        item=int(input("Enter the item to be pushed into the stack: "))
         push(stk,item,n)  
     elif(ch==2):
         pop(stk)
@@ -47,4 +47,3 @@ while True:
         break
     else:
         print("INAVALID INPUT!!!PLEASE ENTER FROM 1 TO 5!!!! TRY AGAIN AFTER SOMETIME!!!")  
-        
