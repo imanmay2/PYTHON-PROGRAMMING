@@ -54,3 +54,22 @@ def func3():
                 if(i[0]=="A"):
                     f5.write(i)
 func3()
+
+# 6. A binary file "Book.dat" has structure [BookNo,Book_Name,Author,Price]
+# i) Write a user defined function Create file() to input data for n records and add to Book.dat
+# ii) Write a function CountRec(Author) in python which accepts the Author name as parameter and count the number of books by the 
+#     given Author are stored in the binary file "Book.dat".
+#solution of i)
+import pickle
+def func4():
+    with open("Book.dat") as f6:
+        d=dict()
+        for i in range(int(input("Enter the range: "))):
+            d["BookNo"]=int(input("Enter the book no. : "))
+            d["Book_Name"]=input("Enter the name of the book")
+            d["Author"]=input("Enter the author name: ")
+            d["Price"]=float(input("Enter the price of the book: "))
+            pickle.dump(d,f6)
+#Solution of ii)
+
+        
