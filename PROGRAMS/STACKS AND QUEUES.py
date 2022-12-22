@@ -21,7 +21,7 @@ def display(stk):
     else:
         print("stack is as follows: ")
         for i in range(len(stk)-1,-1,-1):
-            print(i)
+            print(stk[i])
 # main code starts now.........
 stk=[]
 n=int(input("Enter the strength of the stack: "))
