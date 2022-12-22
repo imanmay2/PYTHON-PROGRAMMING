@@ -12,4 +12,16 @@ def func1():
         print("Count of My: ",ct_My)
 func1()
 
-#2. 
+#2. Write a function AMCount() in python, which should read each character of a text file STORY.TXT, should display the occurence of alphabets 
+# A and M(including small cases a and m too)
+def AMCount():
+    with open("STORY.TXT") as f1:
+        ct_M=ct_A=0
+        for i in f1.read():
+            if(i=="A" or i=="a"):
+                ct_A+=1
+            elif(i=="M" or i=="m"):
+                ct_M+=1
+        print("Occurences of A: ",ct_A)
+        print("Occurences of M: ",ct_M)
+AMCount()
