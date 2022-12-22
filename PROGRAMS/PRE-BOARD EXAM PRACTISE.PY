@@ -36,3 +36,12 @@ def DISPLAYWORDS():
 DISPLAYWORDS()
 
 
+#4. Write a function that will count the number of line start with "A" from the text file ab.txt.
+def func2():
+    with open("ab.txt") as f3:
+        ct=0
+        for i in f3.readlines():
+            if(i[0]=="A"):
+                ct+=1
+        print("No. of lines starting with A: ",ct)
+func2()
