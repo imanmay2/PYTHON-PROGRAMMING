@@ -10,7 +10,7 @@ def func1():
                 ct_My+=1
         print("Count of Me: ",ct_Me)
         print("Count of My: ",ct_My)
-func1()
+
 
 #2. Write a function AMCount() in python, which should read each character of a text file STORY.TXT, should display the occurence of alphabets 
 # A and M(including small cases a and m too)
@@ -24,7 +24,7 @@ def AMCount():
                 ct_M+=1
         print("Occurences of A: ",ct_A)
         print("Occurences of M: ",ct_M)
-AMCount()
+
 
 
 #3. Write a method/function DISPLAYWORDS() in python to read lines from a text file STORY.TXT and display those words which are less than 4 characters.
@@ -33,7 +33,7 @@ def DISPLAYWORDS():
         for i in f2.readlines():
             if(len(i)<4):
                 print(i)
-DISPLAYWORDS()
+
 
 
 #4. Write a function that will count the number of line start with "A" from the text file ab.txt.
@@ -44,16 +44,20 @@ def func2():
             if(i[0]=="A"):
                 ct+=1
         print("No. of lines starting with A: ",ct)
-func2()
 
 #5. Write a function that will transfer all the lines start with "A" from A.txt to B.txt
 def func3():
-    with open("A.txt") as f4:
+    temp_String=""
+    with open("A.txt",'r+') as f4:
         with open("B.txt","w") as f5:
             for i in f4.readlines():
                 if(i[0]=="A"):
                     f5.write(i)
-func3()
+                else:
+                    temp_String+=i
+        f4.seek(0)
+        f4.truncate()
+        f4.write(temp_String)     
 
 # 6. A binary file "Book.dat" has structure [BookNo,Book_Name,Author,Price]
 # i) Write a user defined function Create file() to input data for n records and add to Book.dat
@@ -72,4 +76,4 @@ def func4():
             pickle.dump(d,f6)
 #Solution of ii)
 
-        
+
