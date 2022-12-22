@@ -171,5 +171,11 @@ def execute():
 execute()
 #12. Write a function in python POP(Arr), where Arr is a stack implemented by a list of numbers. 
 #    The function returns the content of the stack.
-
 # solution is same as the above program....
+
+
+#13. Write a function to read a text file line by line and display each word spearated by #.
+
+
+
+#14. Remove all the lines that conatin the character 'a' in a file and write it to another file another.
