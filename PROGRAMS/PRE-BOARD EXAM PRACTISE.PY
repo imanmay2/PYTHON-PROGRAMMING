@@ -110,7 +110,7 @@ def func6(li):
         for j in range(len(li)):
             if((i==0 and j==0) or (i==1 and j==1) or (i==2 and j==2)):
                 l1.append(li[i][j])
-            elif((i==0 and j==2) or (i==1 and j==1) or (i==2 and j==0)):
+            if((i==0 and j==2) or (i==1 and j==1) or (i==2 and j==0)):
                 l2.append(li[i][j])
     print("1st diagonal is: ")
     for i in l1:
@@ -166,6 +166,8 @@ def execute():
         pop(stk)
     elif(ch==3):
         display(stk)
+
+
 #12. Write a function in python POP(Arr), where Arr is a stack implemented by a list of numbers. 
 #    The function returns the content of the stack.
 # solution is same as the above program....
@@ -176,7 +178,22 @@ def func8():
     with open("STORY.TXT") as f8:
         for i in f8.read().split():
             print(i,end='#')
-func8()
+
 
 
 #14. Remove all the lines that conatin the character 'a' in a file and write it to another file another.
+def func9():
+    with open("test.txt","r+") as f9:
+        temp=''
+        with open("test1.txt","w") as f10:
+            for i in f9.readlines():
+                if(i[0]=='A' or i[0]=='a'):
+                    f10.write(i)
+                else:
+                    temp+=i
+            f9.seek(0)
+            f9.truncate()
+            f9.write(temp)
+func9()
+
+
