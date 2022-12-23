@@ -85,6 +85,10 @@ def func5(Author_Name):
                         ct_book+=1
         except EOFError:
             return ct_book
+func4()
+print("The number of books given by the author are: ",func5(input("Enter the author name: ")))
+
+            
 
 #7. Elements of a list L is 1,2,3. write a function transfer() that will transfer the element of the L in a 2d list 3 by 3.
 # in such a way that the resultant 2D list will be like
@@ -194,6 +198,8 @@ def func9():
             f9.seek(0)
             f9.truncate()
             f9.write(temp)
-func9()
+
+def testcode(lis:list):
+    print(f'{lis[0][0]}   {lis[0][2]}\n  {lis[1][1]}\n{lis[2][0]}  {lis[2][2]}')
 
 
