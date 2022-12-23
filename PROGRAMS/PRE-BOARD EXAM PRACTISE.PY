@@ -166,9 +166,6 @@ def execute():
         pop(stk)
     elif(ch==3):
         display(stk)
-    else:
-        break
-execute()
 #12. Write a function in python POP(Arr), where Arr is a stack implemented by a list of numbers. 
 #    The function returns the content of the stack.
 # solution is same as the above program....
@@ -177,7 +174,7 @@ execute()
 #13. Write a function to read a text file line by line and display each word spearated by #.
 def func8():
     with open("STORY.TXT") as f8:
-        for i in f8.split():
+        for i in f8.read().split():
             print(i,end='#')
 func8()
 
