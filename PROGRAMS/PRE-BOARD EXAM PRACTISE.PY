@@ -85,8 +85,6 @@ def func5(Author_Name):
                         ct_book+=1
         except EOFError:
             return ct_book
-func4()
-print("The number of books given by the author are: ",func5(input("Enter the author name: ")))
 
             
 
@@ -174,7 +172,35 @@ def execute():
 
 #12. Write a function in python POP(Arr), where Arr is a stack implemented by a list of numbers. 
 #    The function returns the content of the stack.
-# solution is same as the above program....
+
+def Push(Arr,item,n):
+    if(len(Arr)==n):
+        print("OVERFLOW")
+    else:
+        Arr.append(item)
+def POP(Arr):
+    if(Arr!=[]):
+        print("ELEMENTS IN THE STACK ARE: ")
+        for i in range(len(Arr)-1,-1,-1):
+            print(Arr[i])
+    else:
+        print("Stack is empty!!!!")
+def exe():
+    Arr=list()
+    n=int(input("Enter the strength of the Array: "))
+    while True:
+        print("1. PUSH")
+        print("2. DISPLAY")
+        choic=int(input("Enter your choice from 1 to 2"))
+        if(choic==1):
+            item=int(input("Enter the item: "))
+            Push(Arr,item,n)
+        elif(choic==2):
+            POP(Arr)
+        else:
+            print("BYE BYE!!!!")
+            break
+exe()
 
 
 #13. Write a function to read a text file line by line and display each word spearated by #.
