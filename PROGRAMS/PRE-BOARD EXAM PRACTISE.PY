@@ -175,7 +175,11 @@ execute()
 
 
 #13. Write a function to read a text file line by line and display each word spearated by #.
-
+def func8():
+    with open("STORY.TXT") as f8:
+        for i in f8.split():
+            print(i,end='#')
+func8()
 
 
 #14. Remove all the lines that conatin the character 'a' in a file and write it to another file another.
