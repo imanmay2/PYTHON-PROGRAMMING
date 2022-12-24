@@ -200,7 +200,6 @@ def exe():
         else:
             print("BYE BYE!!!!")
             break
-exe()
 
 
 #13. Write a function to read a text file line by line and display each word spearated by #.
@@ -227,3 +226,13 @@ def func9():
 
 def testcode(lis:list):
     print(f'{lis[0][0]}   {lis[0][2]}\n  {lis[1][1]}\n{lis[2][0]}  {lis[2][2]}')
+
+
+#
+p=5
+def sum(q,r=2):
+    global p p=r+q**2
+    print(p,end='#')
+a=10
+b=5 sum(a,b)
+sum(r=5,q=1)
