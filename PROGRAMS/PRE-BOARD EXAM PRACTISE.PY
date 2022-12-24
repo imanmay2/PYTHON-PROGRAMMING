@@ -228,4 +228,3 @@ def func9():
 def testcode(lis:list):
     print(f'{lis[0][0]}   {lis[0][2]}\n  {lis[1][1]}\n{lis[2][0]}  {lis[2][2]}')
 
-
