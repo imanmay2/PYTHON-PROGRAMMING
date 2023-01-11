@@ -1,0 +1,3 @@
+                                # BOARD QUESTIONS....GIVEN BY SCHOOL PRACTISE....
+# READ A TEXT FILE LINE BY LINE AND DISPLAY EACH WORD SEPARATED BY #.
+with open("german1.txt") as f:
