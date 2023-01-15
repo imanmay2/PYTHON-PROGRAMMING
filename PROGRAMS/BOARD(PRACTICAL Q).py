@@ -1,13 +1,14 @@
                                 # BOARD QUESTIONS....GIVEN BY SCHOOL PRACTISE....
 # 1. READ A TEXT FILE LINE BY LINE AND DISPLAY EACH WORD SEPARATED BY #.
 def func1():
+    str1=''
     with open("b1.txt",'w') as f1:
         inp1=input("Enter the text: ")
         f1.write(inp1)
     with open("b1.txt") as f2:
         for i in f2.read().split():
-            print(i,end='#')
-
+            str1=str1+i+'#'
+    return str1
 
 
 # 2. READ A TXT FILE AND DISPLAY THE NO. OF VOWELS,CONSONANT,UPPERCASE,LOWERCASE CHARACTERS.
@@ -31,14 +32,14 @@ def func2():
                     v+=1
                 else:
                     c+=1
-    print("The number of VOWELS: ",vo)
-    print("The number of CONSONANT:", co)
-    print("The number of Uppercase : ",up)
-    print("The number of lowercase : ",lo)
+    return vo,co,up,lo
+
 
 
 # 3. REMOVE ALL THE LINES THAT CONTAIN THE CHARACTER 'a/A' IN A FILE AND WRITE IT TO ANOTHER FILE.
             # will do it soon....
+
+
 # 4. CREATE A BINARY FILE WITH NAME, ROLL . SEARCH FOR A GIVEN ROLL AND DISPLAY THE NAME IF NOT FOUND APPROPRIATATE MESSAGE.
 def func4():
     import pickle
@@ -61,7 +62,9 @@ def func4():
                         f=1
         except EOFError:
             if(f==0):
-                print("Name not found! Please try inputting a valid Roll no.")
+                return "Name not found! Please try inputting a valid Roll no."
+
+
 
 # 5. CREATE A BINARY FILE WITH ROLL,NAME AND MARKS. INPUT A ROLL AND UPDATE THE MARKS.
 def func5():
@@ -86,14 +89,16 @@ def func5():
                         f=1
         except EOFError:
             if(f==0):
-                print("Roll not found! Please try inputting a valid Roll no.")
+                return "Roll not found! Please try inputting a valid Roll no."
+
+
 # 6. WRITE A RANDOM NO. GENERATOR THAT  GENERATES RANDOM NO. B/W 1 AND 6(SIMULATES A DICE).
 def rand_func6():
     ans=True
     from random import randint
     while ans:
         d=random.randint(1,6)
-        print("Random number from the die is: ",d)
+        return d
         if(d==6):
             continue
         elif(input("Wish to continue: ").lower()=='yes' or input("Wish to continue: ").lower()=='y'):
@@ -106,26 +111,26 @@ def func6():
     def push(li,n):
         item=int(input("Enter the item to be pushed into the stack: "))
         if(len(li)==n):
-            print("OVERFLOW")
+            return "OVERFLOW"
         else:
             li.append(item)
     def pop(li):
         if(li==[]):
-            print("UNDERFLOW")
+            return "UNDERFLOW"
         else:
-            print("POPED ELEMENT FROM THE STACK IS: ",li.pop())
+            return li.pop())
     def peek(li):
         if li==[]:
-            print("STACK EMPTY")
+            return "STACK EMPTY"
         else:
-            print("TOPMOST ELEMENT IS: ",li[len(li)-1])
+            return "TOPMOST ELEMENT IS: ",li[len(li)-1]
 
     def display(li):
         if li!=[]:
             for i in range(li-1,-1,-1):
-                print(i)
+                return i
         else:
-            print("STACK IS ALREADY EMPTY!!!!...")
+            return "STACK IS ALREADY EMPTY!!!!..."
     li=list()
     print("WELCOME TO THE STACK OPERATION!!!!")
     print("1. PUSH")
@@ -137,8 +142,8 @@ def func6():
     if(ch==1):
         push(li,n)
     elif(ch==2):
-        pop(li)
+        print(pop(li))
     elif(ch==3):
-        peek(li)
+        print(peek(li))
     elif(ch==4):
-        display(li)
+        print(display(li))
