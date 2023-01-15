@@ -65,6 +65,7 @@ def func4():
                     if(D['Roll']==r):
                         print("Name is: ",D['Name'])
                         f=1
+                        break
         except EOFError:
             if(f==0):
                 return "Name not found! Please try inputting a valid Roll no."
