@@ -6,8 +6,13 @@ def func1():
         inp1=input("Enter the text: ")
         f1.write(inp1)
     with open("b1.txt") as f2:
-        for i in f2.read().split():
-            str1=str1+i+'#'
+        k=len(f2.read().split())
+        for i in range(1,k+1):
+            if(i!=k):
+                str1=str1+f2.read().split()[i]+'#'
+                ct+=1
+            elif(k==i):
+                str1+=str1+f2.read().split()
     return str1
 
 
@@ -52,9 +57,9 @@ def func4():
     with open("b1.dat",'rb') as f5:
         f=0
         try:
+            r=int(input("Enter the roll number to be searched for: "))
             while True:
                 D=pickle.load(f5)
-                r=int(input("Enter the roll number to be search for: "))
                 for i in D:
                     if(D['Roll']==r):
                         print("Name is: ",D['Name'])
@@ -65,7 +70,7 @@ def func4():
 
 
 
-# 5. CREATE A BINARY FILE WITH ROLL,NAME AND MARKS. INPUT A ROLL AND UPDATE THE MARKS.
+# 5. CREATE A BINARY FILE WITH ROLL,NAME AND MARKS. INPUT A ROLL AND UPDATE THE MARKS VIA UPDATING THE FILE.
 def func5():
     import pickle
     with open("b2.dat",'wb') as f6:
@@ -79,9 +84,9 @@ def func5():
     with open("b2.dat",'rb') as f7:
         f=0
         try:
+            r=int(input("Enter the roll number to be searched for: "))
             while True:
                 D=pickle.load(f7)
-                r=int(input("Enter the roll number to be search for: "))
                 for i in D:
                     if(D['Roll']==r):
                         D['Marks']=float(input("Enter the updated marks: "))
@@ -96,7 +101,7 @@ def rand_func6():
     ans=True
     from random import randint
     while ans:
-        d=random.randint(1,6)
+        d=randint(1,6)
         return d
         if(d==6):
             continue
