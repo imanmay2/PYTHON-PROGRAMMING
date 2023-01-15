@@ -6,8 +6,8 @@ def func1():
         inp1=input("Enter the text: ")
         f1.write(inp1)
     with open("b1.txt") as f2:
-        k=len(f2.read().split())
-        for i in range(1,k+1):
+        k=len(f2.read().split())-1
+        for i in range(k+1):
             if(i!=k):
                 str1=str1+f2.read().split()[i]+'#'
                 ct+=1
@@ -17,18 +17,20 @@ def func1():
 
 
 # 2. READ A TXT FILE AND DISPLAY THE NO. OF VOWELS,CONSONANT,UPPERCASE,LOWERCASE CHARACTERS.
+
 def func2():
+    v='aeiouAEIOU'
+    vo=0
+    co=0
+    lo=0
+    up=0
     with open("b1.txt") as f3:    
-        v='aeiouAEIOU'
-        vo=0
-        co=0
-        lo=0
-        up=0
+        
         def check(p):
             if(p in v):
-                    vo+=1
-                else:
-                    co +=1
+                vo+=1
+            else:
+                co+=1
         for i in f3.read():
             if i.isupper():
                 up+=1
@@ -37,7 +39,6 @@ def func2():
                 lo+=1
                 check(i)
     return vo,co,up,lo
-
 
 
 # 3. REMOVE ALL THE LINES THAT CONTAIN THE CHARACTER 'a/A' IN A FILE AND WRITE IT TO ANOTHER FILE.
