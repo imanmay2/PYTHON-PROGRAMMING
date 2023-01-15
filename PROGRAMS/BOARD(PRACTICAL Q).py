@@ -13,25 +13,24 @@ def func1():
 
 # 2. READ A TXT FILE AND DISPLAY THE NO. OF VOWELS,CONSONANT,UPPERCASE,LOWERCASE CHARACTERS.
 def func2():
-    with open("b1.txt") as f3:
+    with open("b1.txt") as f3:    
         v='aeiouAEIOU'
         vo=0
         co=0
         lo=0
         up=0
+        def check(p):
+            if(p in v):
+                    vo+=1
+                else:
+                    co +=1
         for i in f3.read():
             if i.isupper():
                 up+=1
-                if(i in v):
-                    v+=1
-                else:
-                    c+=1
+                check(i)
             elif(i.islower()):
                 lo+=1
-                if(i in v):
-                    v+=1
-                else:
-                    c+=1
+                check(i)
     return vo,co,up,lo
 
 
