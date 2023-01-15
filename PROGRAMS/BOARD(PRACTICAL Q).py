@@ -81,6 +81,14 @@ def func5():
             d['Roll']=int(input("Enter the Roll number: "))
             d['Marks']=float(input("Enter the Marks: "))
             pickle.dump(d,f6)
+    print("FILE BEFORE UPDATING")
+    with open("b2.dat",'rb') as f11:
+        try:
+            while True:
+                d=pickle.load(f11)
+                print(d)
+        except EOFError:
+            f11.close()
     with open("b2.dat",'rb') as f7:
         f=0
         try:
@@ -94,7 +102,14 @@ def func5():
         except EOFError:
             if(f==0):
                 return "Roll not found! Please try inputting a valid Roll no."
-
+    print("FILE AFTER UPDATING...............")
+    with open("b2.dat",'rb') as f12:
+        try:
+            while True:
+                d22=pickle.load(f12)
+                print(d22)
+        except EOFError:
+            f11.close()
 
 # 6. WRITE A RANDOM NO. GENERATOR THAT  GENERATES RANDOM NO. B/W 1 AND 6(SIMULATES A DICE).
 def rand_func6():
