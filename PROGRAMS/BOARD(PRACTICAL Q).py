@@ -118,7 +118,7 @@ def func6():
         if(li==[]):
             return "UNDERFLOW"
         else:
-            return li.pop())
+            return li.pop()
     def peek(li):
         if li==[]:
             return "STACK EMPTY"
