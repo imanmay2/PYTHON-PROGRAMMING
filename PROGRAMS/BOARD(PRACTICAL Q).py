@@ -91,7 +91,7 @@ def func5():
                 print(d)
         except EOFError:
             f11.close()
-    with open("b2.dat",'rb') as f7:
+    with open("b2.dat",'rb+') as f7:
         f=0
         try:
             r=int(input("Enter the roll number to be searched for: "))
@@ -101,6 +101,8 @@ def func5():
                     if(D['Roll']==r):
                         D['Marks']=float(input("Enter the updated marks: "))
                         f=1
+                        pickle.dump(D,f7)
+                        break
         except EOFError:
             if(f==0):
                 return "Roll not found! Please try inputting a valid Roll no."
@@ -112,7 +114,7 @@ def func5():
                 print(d22)
         except EOFError:
             f11.close()
-
+func5()
 # 6. WRITE A RANDOM NO. GENERATOR THAT  GENERATES RANDOM NO. B/W 1 AND 6(SIMULATES A DICE).
 def rand_func6():
     ans=True
