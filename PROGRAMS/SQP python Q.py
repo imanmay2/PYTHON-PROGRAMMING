@@ -8,5 +8,5 @@ def COUNTLINES():
             if(i[0] in v):
                 ct+=1
     return ct
-print("THE NUMBER OF LINES NOT STARTING WITH ANY VOWEL IS: ",COUNTLINES())
+
 
