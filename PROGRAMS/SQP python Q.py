@@ -9,9 +9,12 @@ def COUNTLINES():
                 ct+=1
     return ct
 # print("The number of lines not starting with any vowels: ",COUNTLINES())
+
+
+
+
 # Write a function ETCount() in Python, which should read each character of a text file "TESTFILE.TXT" and then
 # count and display the count of occurence of alphabets E and T insividually (including the small cases e and t too)
-
 def ETCount():
     with open("TEST.TXT",'w') as f1:
         str2='Today is a pleasant day It might rain rain today It is mentioned on weather sites.'
