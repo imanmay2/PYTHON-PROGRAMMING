@@ -30,3 +30,16 @@ def ETCount():
     print("E or e: ",ct_e)
     print("T or t: ",ct_t)
 #ETCount()
+
+
+# Write a function INDEX_LIST(L), where L is the list of elements passed as argument to the function. The function returns another list named 
+# 'indexList' that stores the indices of all Non-Zero elements of L.
+def INDEX_LIST(L):
+    indexList=list()
+    ct=-1
+    for i in L:
+        ct+=1
+        if(i!=0):
+            indexList.append(ct)
+    return ct
+print("The indexList will have: ",INDEX_LIST([12,4,0,11,0,56]))
