@@ -42,4 +42,6 @@ def INDEX_LIST(L):
         if(i!=0):
             indexList.append(ct)
     return indexList
-print("The indexList will have: ",INDEX_LIST([12,4,0,11,0,56]))
+#print("The indexList will have: ",INDEX_LIST([12,4,0,11,0,56]))
+
+
