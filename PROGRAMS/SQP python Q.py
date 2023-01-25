@@ -41,5 +41,5 @@ def INDEX_LIST(L):
         ct+=1
         if(i!=0):
             indexList.append(ct)
-    return ct
+    return indexList
 print("The indexList will have: ",INDEX_LIST([12,4,0,11,0,56]))
