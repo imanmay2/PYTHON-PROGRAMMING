@@ -48,12 +48,23 @@ def INDEX_LIST(L):
 # A list contains following record of a customer: 
 # [Customer_name,Phone_number,City]
 # Write the following user defined functions to perform given operations on the stack named status:
-#   i) Push_element() - To ush andobject containing name and Phone number of customers who live in Goa to the stack
+#   i) Push_element() - To push an object containing name and Phone number of customers who live in Goa to the stack
 #   ii) Pop_element()- To Pop the objects from the stack and display them. Also, display" stack empty"
-#        when there are no  elemetns in the stack.
+#        when there are no  elements in the stack.
 
 
 
 # Write a fucntion in python, Push(SItem) where, SItem is a dictionary conataining the details of stationary items- {Snamne: price}
-# The function shopuld push the names of those items in the stack who have the price greater than 75. Also display the count of elements
+# The function should push the names of those items in the stack who have the price greater than 75. Also display the count of elements
 #pushed into the stack.
+def Push(SItem):
+    ct=0
+    st=list()
+    for i in SItem:
+        if(SItem[i]>75):
+            ct+=1
+            st.append(i)
+    return ct
+#print("STACK IMPLEMENTED SUCCESSFULLY!!")
+#print("COUNT OF THE NAME IMPLEMENTED ARE: ",Push({'Manmay':78,'Anwesha':80,'Soumya':34,'Lopa':78}))
+
