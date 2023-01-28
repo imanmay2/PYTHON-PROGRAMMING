@@ -68,3 +68,58 @@ def Push(SItem):
 #print("STACK IMPLEMENTED SUCCESSFULLY!!")
 #print("COUNT OF THE NAME IMPLEMENTED ARE: ",Push({'Manmay':78,'Anwesha':80,'Soumya':34,'Lopa':78}))
 
+# FILL IN THE BLANKS:
+# i)
+import mysql.connector as mysql
+def sql_data():
+    con1=mysql.connect(host="localhost",user="root",password="tiger", database="school")
+    mycursor=con1.cursor()#Statement 1 
+    rno=int(input("Enter Roll Number :: "))
+    name=input("Enter name :: ")
+    clas=int(input("Enter class :: "))
+    marks=int(input("Enter Marks :: "))
+    querry="insert into student values({},'{}',{},{})".format(rno,name,clas,marks)
+    mycursor.execute(querry) #Statement 2
+    con1.commit() #Statement 3
+    print("Data Added successfully")
+
+# ii)
+import mysql.connector as mysql
+def sql_data():
+ 
+    con1=mysql.connect(host="localhost",user="root",password="tiger", database="school")
+    mycursor=con1.cursor()#Statement 1
+    print("Students with marks greater than 75 are : ")
+    mycursor.execute("select * from school where marks>75;")
+    data=mycursor.fetchall() #Statement 3
+    for i in data:
+        print(i)
+    print()
+
+#iii)
+import pickle #Statement 1
+def update_data():
+    rec={}
+    fin=open("record.dat","rb") 
+    fout=open("temp.dat","wb") #Statement 2
+    found=False
+    eid=int(input("Enter employee id to update their salary :: "))
+    while True:
+        try:
+        rec=pickle.load(fin)#Statement 3
+        if rec["Employee id"]==eid:
+            found=True 
+                rec["Salary"]=int(input("Enter new salary :: "))
+                pickle.dump(rec,fout)#Statement 4
+        else:
+            pickle.dump(rec,fout)
+        except:
+break
+if found==True:
+print("The salary of employee id ",eid," has 
+been updated.")
+else:
+print("No employee with such id is not found")
+ fin.close()
+fout.close()
+
