@@ -1,12 +1,14 @@
 #1.Store userInp data other than  in a list and array.
-ans="y"
-t=tuple()
-while ans=='y':
-    n=eval(input("Enter the element you want to store: "))
-    t=t+(n,)
-    ans=input("Want to continue: y/n??")
-print("DATA's ARE AS FOLLOWS: ")
-print(t)
+def func1():
+    inp=''
+    ans='y'
+    while(ans=='y'):
+        item=input("Enter the item to be stored: ")
+        inp=inp+item+','
+        ans=input("Wanna store more datas?? y/n?? ")
+    print("Datas which are stored is: ")
+    for i in inp.split(','):
+        print(i,end=',')
 
 
 #2. WAP to convert infix to postfix and reverse of it.
