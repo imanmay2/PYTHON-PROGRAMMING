@@ -51,8 +51,61 @@ def INDEX_LIST(L):
 #   i) Push_element() - To push an object containing name and Phone number of customers who live in Goa to the stack
 #   ii) Pop_element()- To Pop the objects from the stack and display them. Also, display" stack empty"
 #        when there are no  elements in the stack.
-
-
+'''For example:
+If the lists of customer details are:
+[“Gurdas”, “99999999999”,”Goa”]
+[“Julee”, “8888888888”,”Mumbai”]
+[“Murugan”,”77777777777”,”Cochin”]
+[“Ashmit”, “1010101010”,”Goa”]
+The stack should contain
+[“Ashmit”,”1010101010”]
+[“Gurdas”,”9999999999”]
+The output should be:
+[“Ashmit”,”1010101010”]
+[“Gurdas”,”9999999999”]
+Stack Empty'''
+def insert(li):
+    for i in range(4):
+        l=list()
+        name=input("Enter the name of the customer: ")
+        ph_no=int(input("Enter the phone no. of the customer: "))
+        city=input("Enter the city: ")
+        l.append(name)
+        l.append(ph_no)
+        l.append(city)
+        li.append(l)
+def push(stk,n,li):
+    for i in range(0,len(li)-1):
+        if(li[i][2]=="Goa"):
+            stk.append(li[i])
+            if(len(stk)==n):
+                print("STACK OVERFLOW")
+                break
+def pop(stk):
+    if(stk==[]):
+        print('STACK EMPTY')
+    elif(stk!=[]):
+        print("POPED OUT ELEMENT IS",stk.pop())
+        
+def main():
+    li=list()
+    stk=list()
+    insert(li)
+    ans='y'
+    while ans=='y':
+        print("ENTER YOUR CHOICE: ")
+        print("1.PUSH")
+        print("2. POP")
+        ch=int(input("Enter your choice: "))
+        if(ch==1):
+            n=int(input("Enter the total range of the stack: "))
+            push(stk,n,li)
+        elif(ch==2):
+            pop(stk)
+        else:
+            print("INVALID CHOICE!!!! PLEASE SELECT A VALID ONE !!!!")
+        ans=input("Wanna continue???? y/n: ")
+main()
 
 # Write a fucntion in python, Push(SItem) where, SItem is a dictionary conataining the details of stationary items- {Snamne: price}
 # The function should push the names of those items in the stack who have the price greater than 75. Also display the count of elements
@@ -97,7 +150,7 @@ def sql_data():
     print()
 
 #iii)
-import pickle #Statement 1
+'''import pickle #Statement 1
 def update_data():
     rec={}
     fin=open("record.dat","rb") 
@@ -106,20 +159,19 @@ def update_data():
     eid=int(input("Enter employee id to update their salary :: "))
     while True:
         try:
-        rec=pickle.load(fin)#Statement 3
-        if rec["Employee id"]==eid:
-            found=True 
+            rec=pickle.load(fin)#Statement 3
+            if rec["Employee id"]==eid:
+                found=True 
                 rec["Salary"]=int(input("Enter new salary :: "))
                 pickle.dump(rec,fout)#Statement 4
-        else:
-            pickle.dump(rec,fout)
+            else:
+                pickle.dump(rec,fout)
         except:
-break
-if found==True:
-print("The salary of employee id ",eid," has 
-been updated.")
-else:
-print("No employee with such id is not found")
- fin.close()
-fout.close()
+            break
+    if found==True:
+    print("The salary of employee id ",eid," has been updated.")
+    else:
+    print("No employee with such id is not found")
+    fin.close()
+    fout.close()'''
 
