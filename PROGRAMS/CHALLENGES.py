@@ -16,3 +16,6 @@ def func1():
 #   Eg: Input => * and / Out[ut => Same preceedance …
 #4. WAP to display output in tabular format
 #   (as we see in MySQL output of select command) for inputs by user.
+#5. WAP that will accept a CARBON CONTAINING COMPOUND and display the IUPAC NOMENCLATURE of that compound...
+#   For e.g: C2H5OH as Ethanol
+#   For e.g: CH4 as Methane
