@@ -12,6 +12,7 @@ def func1():
 
 
 # WAP that will accept a person's age and check for its vote eligiblity.
+# NOTE : USER CAN'T USE IF-ELSE STATEMENT FOR THE ABOV MENTIONED QUESTION.
 def check_eligiblity():
     age=int(input("Enter the age"))
     while(age>18):
@@ -22,6 +23,35 @@ def check_eligiblity():
         print("HE WILL BE ELIGIBLE AFTER",18-age,"YEARS")
         break
 #3. WAP to convert infix to postfix and reverse of it.
+def infix_postfix(exp):
+    op=['(',')','^','*','/','+','-']
+    stk=list()
+    output=''
+    for i in exp:
+        if(i.isalpha()):
+            output=output+i
+        elif(i in op):
+            if(stk==[]):
+                stk.append(i)
+                output+=i
+            elif(stk!=[]):
+                top=stk[len(stk)-1]
+                if(i=='*' and top=='/') or (i=='/' and top=='*') or (i=='+' and top=='-') or (i=='-' and top=='+'):
+                    output+=top
+                    stk.pop()
+                    stk.append(i)
+                elif(op.index(i)>op.index(top)):
+                    stk.append(i)
+                elif(op.index(i)>op.index(top)):
+                    pass
+                elif(i=='^' and top=='^'):
+                    stk.append(i)
+    return output
+            
+                
+                
+              
+
 #4. WAP to check precedence order of operators. Eg. Input => * and + … Output => * is in higher preceedance.
 #   Eg: Input => * and / Output => Same preceedance …
 def check_precedence(inp1,inp2):
