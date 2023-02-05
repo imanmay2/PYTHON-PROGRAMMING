@@ -21,7 +21,6 @@ def check_eligiblity():
         print("PERSON IS NOT ELIGIBLE FOR VOTE")
         print("HE WILL BE ELIGIBLE AFTER",18-age,"YEARS")
         break
-check_eligiblity()
 #3. WAP to convert infix to postfix and reverse of it.
 #4. WAP to check precedence order of operators. Eg. Input => * and + … Output => * is in higher preceedance.
 #   Eg: Input => * and / Output => Same preceedance …
