@@ -24,6 +24,17 @@ def check_eligiblity():
 #3. WAP to convert infix to postfix and reverse of it.
 #4. WAP to check precedence order of operators. Eg. Input => * and + … Output => * is in higher preceedance.
 #   Eg: Input => * and / Output => Same preceedance …
+def check_precedence(inp1,inp2):
+    li_prece=['()','^','*','/','+','-']
+    if(inp1=='*' and inp2=='/') or (inp1=='/' and inp2=='*') or (inp1=='+' and inp2=='-') or (inp1=='-' and inp2=='+'):
+        print("Both ",inp1,'and',inp2,'are having same precedence')
+    elif(li_prece.index(inp1)>li_prece.index(inp2)):
+        print(inp1,"is in higher precedence")
+    elif(li_prece.index(inp2)>li_prece.index(inp1)):
+        print(inp1,"is in higher precedence")
+    else:
+        print("ERROR ENCOUNTERED!!!!!!")
+
 #5. WAP to display output in tabular format
 #   (as we see in MySQL output of select command) for inputs by user.
 #6. WAP that will accept a CARBON CONTAINING COMPOUND and display the IUPAC NOMENCLATURE of that compound...
