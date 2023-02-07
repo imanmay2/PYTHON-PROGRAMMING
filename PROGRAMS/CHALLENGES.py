@@ -27,7 +27,10 @@ def infix_postfix(exp):
     op=['(',')','^','*','/','+','-']
     stk=list()
     output=''
+    l=len(exp)
+    ct=0
     for i in exp:
+        ct+=1
         if(i.isalpha()):
             output=output+i
         elif(i in op):
@@ -42,13 +45,44 @@ def infix_postfix(exp):
                     stk.append(i)
                 elif(op.index(i)>op.index(top)):
                     stk.append(i)
-                elif(op.index(i)>op.index(top)):
-                    pass
+                elif(op.index(i)<=op.index(top)):
+
+                        while op.index(i)<op.index(top):
+                            output+=top
+                            stk.pop()
+                            if(stk==[]):
+                                stk.append(i)
+                                break
+                            
+                            elif(op.index(i)>op.index(top)):
+                                stk.append(i)
+                                break
+                        
                 elif(i=='^' and top=='^'):
                     stk.append(i)
+                elif(i==')'):
+                    if('(' not in stk):
+                        print("( not found in the expression")
+                        break
+                    else:
+                        stk.append(')')
+                        i1=stk.index('(')
+                        i2=stk.index(')')
+                        li=stk[i1+1:i2]
+                        li=li[::-1]
+                        for kj in li:
+                            kj.append(stk)
+                        li=list()
+                if(ct==l):
+                    stk=stk[::-1]
+                    for it in stk:
+                        output+=it
+
+
+
     return output
             
-                
+print(infix_postfix("K+L-M*N+(O^P)*W/U/V*T+Q"))      
                 
               
 
