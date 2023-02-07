@@ -36,33 +36,35 @@ def infix_postfix(exp):
         elif(i in op):
             if(stk==[]):
                 stk.append(i)
-                output+=i
             elif(stk!=[]):
                 top=stk[len(stk)-1]
                 if(i=='*' and top=='/') or (i=='/' and top=='*') or (i=='+' and top=='-') or (i=='-' and top=='+'):
                     output+=top
                     stk.pop()
                     stk.append(i)
-                elif(op.index(i)>op.index(top)):
-                    stk.append(i)
                 elif(op.index(i)<=op.index(top)):
+                    stk.append(i)
+                elif(op.index(i)>op.index(top)):
 
-                        while op.index(i)<op.index(top):
+                        while op.index(i)>=op.index(top):
                             output+=top
                             stk.pop()
+                            
                             if(stk==[]):
                                 stk.append(i)
+                                
                                 break
-                            
-                            elif(op.index(i)>op.index(top)):
+                            elif(op.index(i)<op.index(top)):
                                 stk.append(i)
+                                
                                 break
+                            top=stk[len(stk)-1]
                         
                 elif(i=='^' and top=='^'):
                     stk.append(i)
                 elif(i==')'):
                     if('(' not in stk):
-                        print("( not found in the expression")
+                        #print("( not found in the expression")
                         break
                     else:
                         stk.append(')')
@@ -71,18 +73,16 @@ def infix_postfix(exp):
                         li=stk[i1+1:i2]
                         li=li[::-1]
                         for kj in li:
-                            kj.append(stk)
+                            output+=kj
                         li=list()
-                if(ct==l):
-                    stk=stk[::-1]
-                    for it in stk:
-                        output+=it
+        if(ct==l):
+            stk=stk[::-1]
+            for it in stk:
+                output+=it
 
 
 
-    return output
-            
-print(infix_postfix("K+L-M*N+(O^P)*W/U/V*T+Q"))      
+    return output 
                 
               
 
