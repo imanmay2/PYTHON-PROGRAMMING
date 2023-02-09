@@ -83,7 +83,7 @@ def infix_postfix(exp):
 
 
     return output 
-                
+
               
 
 #4. WAP to check precedence order of operators. Eg. Input => * and + … Output => * is in higher preceedance.
