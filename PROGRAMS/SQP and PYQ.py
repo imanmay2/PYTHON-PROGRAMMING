@@ -64,48 +64,42 @@ The output should be:
 [“Ashmit”,”1010101010”]
 [“Gurdas”,”9999999999”]
 Stack Empty'''
-def insert(li):
-    for i in range(4):
-        l=list()
-        name=input("Enter the name of the customer: ")
-        ph_no=int(input("Enter the phone no. of the customer: "))
-        city=input("Enter the city: ")
-        l.append(name)
-        l.append(ph_no)
-        l.append(city)
-        li.append(l)
-def push(stk,n,li):
-    for i in range(0,len(li)-1):
-        if(li[i][2]=="Goa"):
-            stk.append(li[i])
-            if(len(stk)==n):
-                print("STACK OVERFLOW")
-                break
+
+def push(stk):
+	li=list()
+	n=int(input("Enter the range: "))
+	for i in range(n):
+		name=input("Enter the name: ")
+		phn_no=int(input("Enter the phone number: "))
+		city=input("Enter the city: ")
+		li.append(name)
+		li.append(phn_no)
+		li.append(city)
+		if(city.lower()=='goa'):
+			stk.append(li)
 def pop(stk):
-    if(stk==[]):
-        print('STACK EMPTY')
-    elif(stk!=[]):
-        print("POPED OUT ELEMENT IS",stk.pop())
-        
-def main():
-    li=list()
-    stk=list()
-    insert(li)
-    ans='y'
-    while ans=='y':
-        print("ENTER YOUR CHOICE: ")
-        print("1.PUSH")
-        print("2. POP")
-        ch=int(input("Enter your choice: "))
-        if(ch==1):
-            n=int(input("Enter the total range of the stack: "))
-            push(stk,n,li)
-        elif(ch==2):
-            pop(stk)
-        else:
-            print("INVALID CHOICE!!!! PLEASE SELECT A VALID ONE !!!!")
-        ans=input("Wanna continue???? y/n: ")
-main()
+	if(stk==[]):
+		print("Stack Empty!!")
+	else:
+		print(stk.pop())
+def menu():
+	print("MENU")
+	print("1. PUSH")
+	print("2. POP")
+	print("3.EXIT")
+	stk=list()
+	ans='yes'
+	while ans=="yes":
+		ch=int(input("Enter your choice: "))
+		if(ch==1):
+			push(stk)
+		elif(ch==2):
+			pop(stk)
+		elif(ch==3):
+			print("bye bye!!")
+			break
+		else:
+			print("please enter a valid choice from 1 to 3")
 
 # Write a fucntion in python, Push(SItem) where, SItem is a dictionary conataining the details of stationary items- {Snamne: price}
 # The function should push the names of those items in the stack who have the price greater than 75. Also display the count of elements
@@ -174,4 +168,161 @@ def update_data():
     print("No employee with such id is not found")
     fin.close()
     fout.close()'''
+
+
+
+
+
+#								YEAR: 2019
+
+
+
+
+# WRITE A FUNCTION  RevvText() TO READ A TEXTFILE "INPUT.TXT" AND PRINT ONLY WORD STARTING WITH I IN REVERSE ORDER.
+# E.G: INPUT:  INDIA IS MY COUNTRY.
+#	OUTPUT: AIDNI SI MY COUNTRY.
+def write_input():
+	with open("book.txt","w") as i2:
+		i2.write("INDIA hii")
+def RevText():
+	with open("Input.txt") as i1:
+		str1=''
+		for i in i1.read().split():
+			if(i[0]=='i' or i[0]=='I'):
+				str1=str1+i[::-1]+' '
+			else:
+				str1+=i+' '
+		print(str1)
+#write_input()
+#RevText()
+
+
+#WRITE A FUNCTION TO COUNT THE NUMBER OF LOWERCASE ALPHABETS PRESENT IN A TEXT FILE BOOK.TXT.
+
+def count_lowercase():
+	with open("book.txt") as i3:
+		ct=0
+		for i in i3.read():
+			if(i.islower()):
+				ct+=1
+	print("count of the lowercase: ",ct)
+#count_lowercase()
+
+
+
+
+#								YEAR: 2017
+
+
+
+
+#WRITE A METHOD  IN PYTHON TO READ LINES FROM A TEXT FILE "MYNOTES.TXT". AND DISPLAY THOSE LINES, WHICH ARE STARTING WITH THE APLHABET-'K'
+def display_k():
+	with open("MYNOTES.TXT") as i4:
+		for i in i4.readlines():
+			if(i[0]=='k' or i[0]=='K'):
+				print(i)
+
+#display_k()
+
+
+#								YEAR: 2016
+
+# Write a method that will find and display the prime numbers between 2 to N. Pass N as argument to the method.
+def prime(N):
+	for i in range(2,N+1):
+		ct=0
+		for j in range(2,i+1):
+			if(i%j==0):
+				ct+=1
+		if(ct==1):
+			print(i,end=',')
+#prime(int(input("Enter the range : ")))
+
+
+
+
+# Write a method  in python to write multiple line of text contents into a text file daynote.txt.
+def write_multiline():
+	with open("daynote.txt",'w') as i5:
+		ans='y'
+		while ans=='y':
+			i5.write(input("Enter the line: ")+'\n')
+			ans=input("Are there more line to be written y/n: ")
+#write_multiline()
+
+
+
+# CONSIDER THE FOLLOWING DEFINATION OF CLASS EMPLOYEE, WRITE A METHOD IN PYTHON TO SEARCG AND DISPLAY THE CONTENT IN A PICKLED FILE EMP.DAT
+# WHERE EMPNO IS MATCHING WITH 'A0005'.
+import pickle 
+def search():
+	with open("emp.dat") as i6:
+		try:
+			while True:
+				k=pickle.load(i6)
+				if(k['Employee']=='A0005'):
+					print(k)
+		except EOFError:
+			i6.close()
+
+
+
+
+#								YEAR: 2015
+
+
+
+# write a method in python to display the elements of list twice. if it is a no. and display the element terminated with * if it is not a 
+# number.
+def display(li):
+	for i in li:
+		if(type(i)==type(1)):
+			print(str(i)+str(i))
+		elif(type(i)==type('s')):
+			print(i+'*')
+#display(['RAMAN',21,'YOGRAJ',3,'TARA'])
+
+
+
+
+#Write PUSH(Names) and POP(Name) methods in python to add names
+#and remove names considering them to act as push and pop
+#operation in stack
+
+def PUSH(Name,n):
+	if(len(Name)!=n):
+		Name.append(input("Enter the name : "))
+	else:
+		print("STACK OVERFLOW!!")
+def POP(Name):
+	if(Name==[]):
+		print("Stack empty!!")
+	else:
+		print(Name.pop())
+def disp(): 
+	print("MENU") 
+	print("1.PUSH") 
+	print("2.POP") 
+	ans='y'
+	Name=list()
+	n=int(input("Enter the length of the list of the names: "))
+	while ans=='y':
+		ch=int(input("Enter your choice: "))
+		if(ch==1):
+			PUSH(Name,n)
+		elif(ch==2):
+			POP(Name)
+		elif(ch==3):
+			print('bye ! bye!')
+			break
+		ans=input("Wanna continue: y/n: ")
+#disp()
+
+
+
+
+# Write a fucntion in python from that binary file TOYS.DAT and display those details of those TOYS, which are meant for the children of 
+# AvgRange 5 to 8
+
 
