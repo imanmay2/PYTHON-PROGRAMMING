@@ -322,7 +322,15 @@ def disp():
 
 
 
-# Write a fucntion in python from that binary file TOYS.DAT and display those details of those TOYS, which are meant for the children of 
-# AvgRange 5 to 8
+# WRITE A FUNCTION  THAT WILL DISPLAY THE COMPOSITE NUMBER FROM 2 TO N.(n must be accepted by the user)
+def composite(N):
+	for i in range(1,N+1):
+		ct=0
+		for j in range(1,i+1):
+			if(i%j==0):
+				ct+=1
+		if(ct!=2):
+			print(i)
+#composite(int(input("Enter the range upto which it will print the composite number: ")))
 
 
