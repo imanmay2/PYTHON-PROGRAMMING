@@ -125,19 +125,18 @@ stk=list()
 
 # 7. Write a function that will transpose the element of a 2D list of 3 by 3 and display it in the matrix format.
 
-# 8. Write a function in python that counts the number of 'Me' and "My" words present in a text file "Story.txt".
+# 8. Write a function in python that counts the number of 'Me' and "My" words present in a text file "STORY.txt".
 def func8():
-	with open("Story.txt","rb") as f8:
+	with open("STORY.txt") as f8:
 		ct_me=0
-		ct_my=0		
-		chr=f8.readlines()
-		for i in chr:
-			if(i=="Me"):
-				ct_me+=1
-			elif(i=="My"):
-				ct_my+=1
-		return ct_me,ct_my
-print("The count of Me and My are : ",ct_me,ct_my,"respectively",func8())
+		ct_my=0
+		for i in f8.read():
+			if(i=='Me'):
+				ct_me=ct_me+1
+			elif(i=='My'):
+				ct_my=ct_my+1
+		print("Count of Me and My are : ",ct_me,ct_my,"respectively")
+#func8()
 # 9. Write a function AMCount() in python, which should read each character of a text file Story.txt , should count and 
 #    display the occurenence of A and M (including small cases of a and m too).
 
