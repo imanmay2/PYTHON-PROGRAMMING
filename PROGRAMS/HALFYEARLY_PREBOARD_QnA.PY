@@ -13,6 +13,8 @@ def CreateFile():
             d['Price']=input("ENTER THE PRICE OF THE BOOK : ")
             pickle.dump(d,f)
 #CreateFile()
+
+
 # ii) Write a function CountRec(Author) in python which accepts the author name as parameter  and count and return number of books 
 #     by the given author are stored in the binary file "Book.dat"
 def CountRec(author):
@@ -50,11 +52,28 @@ def func2(li):
 #func2([[1,2,3],[4,5,6],[7,8,9]])
 
 
-# 3. Elements of a list is 1,2,3. Write a function transfer() that will transfer the element of the L in a 2D list of 3 by 3 in such 
+
+
+######### 3. Elements of a list is 1,2,3. Write a function transfer() that will transfer the element of the L in a 2D list of 3 by 3 in such 
 # a way that the resultant @D list will be like 
 # 1 2 3
 # 1 2 0
 # 1 0 0
+def Transfer():
+	l=[1,2,3]
+	li=[l,l,l]
+	for i in range(0,len(li)):
+		for j in range(0,len(li)):
+			if((i==1 and j==2) or (i==2 and j==1) or (i==2 and j==2)):
+				li[i][j]=0
+	print("The 2D list is as follows : ")
+	print('[')
+	for i in li:
+		print(i)
+	print(']')
+Transfer()
+
+
 
 # 4. Write a fucntion that will display the sum of each coloumn of a 2D list of 3 by 3.
 def func4(li):
@@ -127,22 +146,64 @@ stk=list()
 
 # 8. Write a function in python that counts the number of 'Me' and "My" words present in a text file "STORY.txt".
 def func8():
-	with open("STORY.txt") as f8:
+	with open("Story.txt",'r') as f8:
 		ct_me=0
 		ct_my=0
-		for i in f8.read():
+		for i in f8.read().split():
 			if(i=='Me'):
 				ct_me=ct_me+1
 			elif(i=='My'):
 				ct_my=ct_my+1
 		print("Count of Me and My are : ",ct_me,ct_my,"respectively")
 #func8()
+
+
+
+
 # 9. Write a function AMCount() in python, which should read each character of a text file Story.txt , should count and 
 #    display the occurenence of A and M (including small cases of a and m too).
+def AMCount():
+	with open("Story.txt",'r') as f9:
+		ct_m=0
+		ct_a=0
+		for i in f9.read():
+			if(i=='A' or i=='a'):
+				ct_a+=1
+			elif(i=='M' or i=='m'):
+				ct_m+=1
+		print("Count of A and M including small letters are : ",ct_a,ct_m,"respectively")	
+#func9()
 
-# 10. Write a method DISPLAYWORDS() in python to read lines from a text file STORY.TXT, and display those words, which are less than 
+
+
+
+# 10. Write a method DISPLAYWORDS() in python to read lines from a text file Story.TXT, and display those words, which are less than 
 #     4 characters.
+def DISPLAYWORDS():
+	with open('Story.txt') as f10:
+		print("WORDS WHICH ARE LESS THAN 4 CHARACTERS ARE AS FOLLOWS : ")
+		for i in f10.read().split():
+			if(len(i)<4):
+				print(i,end=' ')
+#DISPLAYWORDS()
+# 11. Write a function that will count the number of line starting with "A" from the text file Story.txt.
+def func11():
+	with open('Story.txt') as f11:
+		ct=0
+		for i in f11.readlines():
+			if(i[0]=='A'):
+				ct+=1
+		print("Number of lines starting with A are : ",ct)
+#func11()
+		
+	
 
-# 11. Write a function that will count the number of line starting with "A" from the text file ab.txt.
 
-# 12. Write a function that will transfer all the lines start with "A" from A.txt to B.txt.  
+#### 12. Write a function that will transfer all the lines start with "A" from A.txt to B.txt.  
+def func12():
+	with open("A.txt",'r') as f12:
+			with open("B.txt",'w') as f121:
+				for i in f12.readlines():
+					if(i[0]=='A'):
+						f121.write(i)
+#func12()
