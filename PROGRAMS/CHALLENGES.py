@@ -110,4 +110,5 @@ def check_precedence(inp1,inp2):
 #   e.g- hello How Are 'YOU'.
 # output-hello how are 'YOU'.
 def func6(str1):
-    return str1.split("'")[0].lower()+str1.split("'")[1]
+    return str1.split("'")[0].lower()+"'"+str1.split("'")[1]+"'"
+print(func6("hello How Are 'YOU'"))
