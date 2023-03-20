@@ -59,22 +59,16 @@ def func2(li):
 # 1 2 3
 # 1 2 0
 # 1 0 0
-def Transfer():
-	l=[1,2,3]
-	li=[l,l,l]
-	for i in range(0,len(li)):
-		for j in range(0,len(li)):
-			if((i==1 and j==2) or (i==2 and j==1) or (i==2 and j==2)):
-				li[i][j]=0
-	print("The 2D list is as follows : ")
-	print('[')
-	for i in li:
-		print(i)
-	print(']')
-Transfer()
-
-
-
+def Transfer(l):
+	li=list()
+	for i in range(0,len(l)):
+		if(i==0):
+			li.extend([l])
+		else:
+			l[len(l)-i]=l[len(l)-i]-l[len(l)-i]
+			li.extend([l])
+	print(li)
+Transfer([1,2,3])			
 # 4. Write a fucntion that will display the sum of each coloumn of a 2D list of 3 by 3.
 def func4(li):
 	s1=s2=s3=0
@@ -143,6 +137,16 @@ stk=list()
 
 
 # 7. Write a function that will transpose the element of a 2D list of 3 by 3 and display it in the matrix format.
+def Transpose_matrix(li):
+	for i in range(0,len(li)):
+		for j in range(0,len(li)):
+			li[i][j]=li[j][i]
+	print('[')
+	for i in li:
+		print(i)
+	print(']')
+##Transpose_matrix([[1,2,3],[4,5,6],[7,8,9]])
+
 
 # 8. Write a function in python that counts the number of 'Me' and "My" words present in a text file "STORY.txt".
 def func8():
@@ -199,7 +203,7 @@ def func11():
 	
 
 
-#### 12. Write a function that will transfer all the lines start with "A" from A.txt to B.txt.  
+# 12. Write a function that will transfer all the lines start with "A" from A.txt to B.txt.  
 def func12():
 	with open("A.txt",'r') as f12:
 			with open("B.txt",'w') as f121:
@@ -207,3 +211,32 @@ def func12():
 					if(i[0]=='A'):
 						f121.write(i)
 #func12()
+
+
+
+
+							# PRE-BORADS QUESTION PAPER
+
+
+#13.  Write a method COUNTLINES() in python to display the number of lines from the text file 'TESTFILE.TXT'
+#     and transfer the lines which are not started with any vowel to another 'C.TXT'.
+
+		
+#14.  Write a function ETCount() in python, which should read each character of a text file 'TESTFILE.TXT'
+#     and then count and display the count the occurence of the aplhabets E and T individually (including small cases and e and t too).
+#15.  Write a fucntion in python , Push(SItem) where, SItem is a dictionary containing the details of stationary items- {Sname:price}.
+#     The function should push the names of those items in the stack who have price greater than 75. Also, display the count of elements 
+#     pushed into the stack.
+#16.  Write a function INDEX_LIST(L), where L is the list of elements passed as argument to the function.
+#     The fucntion returns another list named 'indexList' that stores the indices of all the even elements of L.
+#17.  Write a Program in Python that defines and calls the following user defined functions: 
+#           add()- To accept and add data of an employee to a CSV file 'furdata.csv'.
+#                  Each records contains of a list with field elements as fid,fname,and fprice to store furniture name and furniture price
+#                  respectively..
+#        search()- To display the records of the furniture whose price is more than 10000.
+#18.  Write a function Lshift(Arr,n) in python, which accepts a list Arr of numbers and n is a numeric value by which all elements are shifted to left.
+#19.  Write a function that counts the numbers of 'Me' and 'My' words present in a text file 'STORY,TXT'     
+#20.  Read a text file line by line and display each words separated by #.
+#21.  Read a text file and display the number of uppercase and lowercase characters in the file.
+#22.  Remove all the lines that contain the character 'a' in a file and write it to another file.
+#23.  Create a binary file with the name and roll number. Search for a given roll number and display the name, if not found display appropriate message.

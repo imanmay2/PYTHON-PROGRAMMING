@@ -99,8 +99,15 @@ def check_precedence(inp1,inp2):
     else:
         print("ERROR ENCOUNTERED!!!!!!")
 
-#5. WAP to display output in tabular format
-#   (as we see in MySQL output of select command) for inputs by user.
-#6. WAP that will accept a CARBON CONTAINING COMPOUND and display the IUPAC NOMENCLATURE of that compound...
+
+#5. WAP that will accept a CARBON CONTAINING COMPOUND and display the IUPAC NOMENCLATURE of that compound...
 #   For e.g: C2H5OH as Ethanol
 #   For e.g: CH4 as Methane
+
+
+
+#6.Wap that will accept a sentence and convert it in lower case except the text that it is given within quotes.
+#   e.g- hello How Are 'YOU'.
+# output-hello how are 'YOU'.
+def func6(str1):
+	
