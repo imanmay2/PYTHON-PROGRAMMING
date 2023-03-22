@@ -220,23 +220,134 @@ def func12():
 
 #13.  Write a method COUNTLINES() in python to display the number of lines from the text file 'TESTFILE.TXT'
 #     and transfer the lines which are not started with any vowel to another 'C.TXT'.
+def COUNTLINES():
+	ct_total=0
+	v='AEIOUAaeiou'
+	with open('TESTFILE.TXT','r') as f131:
+		print("TOTAL NUMBER OF LINES PRESENT IN TESTFILE.TXT ARE : ",len(f131.readlines()))
+		with open('c.txt','w') as f132:
+			for i in f131.realines():
+				if(i[0] not in v):
+					f132.write(i)
+#COUNTLINES()
+
 
 		
 #14.  Write a function ETCount() in python, which should read each character of a text file 'TESTFILE.TXT'
-#     and then count and display the count the occurence of the aplhabets E and T individually (including small cases and e and t too).
+#     and then count and display the count the occurence of the alphabets E and T individually (including small cases and e and t too).
+def ETCount():
+	ct_e=0
+	ct_t=0
+	with open('TESTFILE.TXT','r') as f14:
+		for i in f14.read():
+			if(i=='e' or i=='E'):
+				ct_e+=1
+			elif(i=='t' or i=='T'):
+				ct_t+=1
+		print("COUNT OF E AND T ARE : ",ct_e,ct_t,"RESPECTIVELY")
+#ETCount()
+
+	
+
+
 #15.  Write a fucntion in python , Push(SItem) where, SItem is a dictionary containing the details of stationary items- {Sname:price}.
 #     The function should push the names of those items in the stack who have price greater than 75. Also, display the count of elements 
 #     pushed into the stack.
+def Push(SItem):
+	ct_stk=0
+	stk=list()
+	for i in SItem:
+		if(SItem[i]>75):
+			ct_stk+=1
+			stk.append(i)
+	print("STACK IS AS FOLLOWS :  ",stk)
+	print("COUNTS OF THE ELEMENTS PUSHED INTO THE STACK ARE : ",ct_stk)
+#Push({'Rajveer':45,'Vutu':96})
+
+
+
+
 #16.  Write a function INDEX_LIST(L), where L is the list of elements passed as argument to the function.
 #     The fucntion returns another list named 'indexList' that stores the indices of all the even elements of L.
+def INDEX_LIST(L):
+	indexList=list()
+	for i in L:
+		if(i%2==0):
+			indexList.append(L.index(i))
+	return indexList
+print(INDEX_LIST([1,2,3,4,5,6,7,8,9,0]))
+
+
+
+
 #17.  Write a Program in Python that defines and calls the following user defined functions: 
 #           add()- To accept and add data of an employee to a CSV file 'furdata.csv'.
 #                  Each records contains of a list with field elements as fid,fname,and fprice to store furniture name and furniture price
 #                  respectively..
 #        search()- To display the records of the furniture whose price is more than 10000.
+
+
+
 #18.  Write a function Lshift(Arr,n) in python, which accepts a list Arr of numbers and n is a numeric value by which all elements are shifted to left.
+
+
+
 #19.  Write a function that counts the numbers of 'Me' and 'My' words present in a text file 'STORY,TXT'     
-#20.  Read a text file line by line and display each words separated by #.
-#21.  Read a text file and display the number of uppercase and lowercase characters in the file.
+def func19():
+    ct_Me=0
+    ct_My=0
+    with open('STORY.TXT','r') as f19:
+        for i in f19.read().split():
+            if(i=='Me'):
+                ct_Me+=1
+            elif(i=='My'):
+                ct_My+=1
+        print("COUNT OF ME AND MY ARE : ",ct_Me,ct_My,"RESPECTIVELY")
+#func19()
+
+
+#20.  Write a function that reads a text file line by line and display each words separated by #.
+def func20():
+    with open('Story.txt') as f20:
+        for i in f20.read().split():
+            print(i,end='#')
+#func20
+
+
+
+#21. Write a function that reads a text file and display the number of uppercase and lowercase characters in the file.
+def func21():
+    with open('Story.txt') as f21:
+        ct_upp=0
+        ct_low=0
+        for i in f21.read():
+            if(i.isupper()):
+                ct_upp+=1
+            elif(i.islower()):
+                ct_low+=1
+	print('NUMBER OF UPPERCASE AND LOWERCASE CHARACTERS ARE : '.ct_upp,ct_low,'RESPECTIVELY')
+#func21()
 #22.  Remove all the lines that contain the character 'a' in a file and write it to another file.
+def func22():
+	with open('Story.txt','r') as f221:
+            with open('Write.txt','w') as f222:
+                for i in f221.readlines():
+                    if('a' in i):
+                        f222.write(i)
+
+
 #23.  Create a binary file with the name and roll number. Search for a given roll number and display the name, if not found display appropriate message.
+import pickle
+def func23_create():
+    with open('bin.dat','wb') as f231:
+        d=dict()
+        n=int(input("Enter the range : "))
+        for i in range(n):
+            d['Name']=input("Enter the name of the student : ")
+            d['Roll']=int(input("Enter the Roll no. : "))
+            pickle.dump(d,f231)
+f23_create()
+def func23_search():
+    with open('bin.dat','rb') as f232:
+		print(pickle.load(f232))
+f23_search()
