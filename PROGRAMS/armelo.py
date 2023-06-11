@@ -1,0 +1,2 @@
+def armelo():
+    print(s)
