@@ -2,7 +2,8 @@
 #     str1=ab#d
 #     str2=ac#d       
 #     Remove the # and the previous character, and check whether the strings are same or not.
-#     If same , then return True, else False
+#     If same , then return True, else False.
+
 
 
 def remove_hash(list_):
@@ -17,7 +18,6 @@ def remove_hash(list_):
         ct-=1
     return list_
         
-
 
 
 
