@@ -23,6 +23,8 @@ def remove_hash(list_):
 
 str1=input("Enter the 1st String : ").split()
 str2=input("Enter the 2nd String : ").split()
+print(remove_hash(str1))
+print(remove_hash(str2))
 if(remove_hash(str1)==remove_hash(str2)):
     print("True")
 else:
