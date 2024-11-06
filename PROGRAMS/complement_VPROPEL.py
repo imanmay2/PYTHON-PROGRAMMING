@@ -6,8 +6,8 @@ def decimalBinary(num):
         num=num//2
     return int(str_)
 
-def binaryDecimal(num):
-    str_=str(num)
+def binaryDecimal(str_):
+    # str_=str(num)
     i=len(str_)-1
     res_=0
     while(i!=-1):
@@ -24,10 +24,13 @@ def complement(binNum):
             newStr+="0"
         elif(i=="0"):
             newStr+="1"
-    return int(newStr)
+    return newStr
 
 n=int(input(""))
 if(n>=0 and n<109):
+     print(binaryDecimal(complement(decimalBinary(n))))
+     print(decimalBinary(n))
+     print(complement(decimalBinary(n)))
      print(binaryDecimal(complement(decimalBinary(n))))
 else:
     print("Invalid")
