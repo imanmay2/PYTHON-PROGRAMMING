@@ -29,3 +29,5 @@ if(remove_hash(str1)==remove_hash(str2)):
     print("True")
 else:
     print("False")  
+
+
