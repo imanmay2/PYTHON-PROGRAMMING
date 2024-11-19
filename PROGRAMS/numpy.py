@@ -10,6 +10,7 @@ print(np.any(arr1))
 print(np.less_equal(arr1,arr2))
 print(np.isfinite(arr1))
 
+
 x=np.ones(100)   #Generates 100 ones
 print(x)
 
@@ -19,7 +20,7 @@ print(y)
 
 print(np.ones(100)*22)
 
-print(np.arange(1,100))  #Generates number from 1 to 99
+print(np.arange(1,100))                   #Generates number from 1 to 99
 
 print(np.arange(1,101).reshape(10,10))    #Converts 10X10 matrix ranging from 1-100
 
@@ -30,5 +31,5 @@ print(np.mean(arr4,axis=0))   # Mean of the first row of x axis.
 
 arr5=np.array([1,2+2+0j,0+4j,3.14])
 print(np.iscomplex(arr5))   # Checks only for the presence of imaginary number.
-print(np.isreal(arr5))    #Checks for the real part only.
-print(np.isscalar(arr5))   #Checks for the scaler value only.
+print(np.isreal(arr5))     # Checks for the real part only.
+print(np.isscalar(arr5))  # Checks for the scaler value only.
