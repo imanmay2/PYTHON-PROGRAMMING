@@ -5,29 +5,35 @@
 #     If same , then return True, else False.
 
 
+def convert_List(str1,str2):
+    li1=list()
+    li2=list()
+    for i in str1:
+        li1.append(i)
+    for i in str2:
+        li2.append(i)
+    return (li1,li2)
 
-def remove_hash(list_):
-    ct=list_.count('#')
-    while(ct>0):
-        idx=list_.index('#')
-        if(idx==0):
-            list_.pop(idx)
+def removehash(li):
+    while('#' in li):
+        idx=li.index("#")
+        if(idx>0):
+            li.pop(idx)
+            li.pop(idx-1)
         else:
-            list_.pop(idx-1)
-            list_.pop(idx)
-        ct-=1
-    return list_
-        
+            li.pop(idx)
+    return li
 
 
 
-str1=input("Enter the 1st String : ").split()
-str2=input("Enter the 2nd String : ").split()
-print(remove_hash(str1))
-print(remove_hash(str2))
-if(remove_hash(str1)==remove_hash(str2)):
-    print("True")
+str1=input("Enter the String 1 : ")
+str2=input("Enter the String 2 : ")
+
+
+(li1,li2)=convert_List(str1,str2)
+li1=removehash(li1)
+li2=removehash(li2)
+if(li1==li2):
+    print(True)
 else:
-    print("False")  
-
-
+    print(False)
